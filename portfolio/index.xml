@@ -1,50 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Robotenique&#39;s Home</title>
+    <title>Projects on Juliano Garcia</title>
     <link>https://robotenique.github.io/portfolio/</link>
-    <description>Recent content in Projects on Robotenique&#39;s Home</description>
+    <description>Recent content in Projects on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>DERA</title>
-      <link>https://robotenique.github.io/portfolio/dera/</link>
-      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      <title>A Study on Gradient Boosting Classifiers</title>
+      <link>https://robotenique.github.io/portfolio/tcc/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://robotenique.github.io/portfolio/dera/</guid>
-      <description>This is a Java reference implementation of dynamic event-driven actors runtime aiming at providing adequate abstraction levels and mechanisms for modelling and developing (distributed) event-based systems. DERA leverages the intrinsic loose coupling of event-driven communication styles to support various kinds of run-time evolution and adaptation (i.e., enabling run-time flexibility) while minimizing the non-deterministic nature of traditional event-based applications (i.e., supporting formal analysis).</description>
+      <guid>https://robotenique.github.io/portfolio/tcc/</guid>
+      <description>Gradient Boosting Machines (GBMs) is a supervised machine learning algorithm that has been achieving state-of-the-art results in a wide range of different problems and winning machine learning competitions. When building any machine learning model, the hyperparameter optimization can become a costly and time-consuming task depending on the number and the hyperparameter space of the tuning procedure. Machine learning users that are not experienced researchers or data science professionals can struggle to define which hyperparameters and values to choose when starting the model tuning, especially with newer GBMs implementations like the XGBoost and LightGBM library.</description>
     </item>
     
     <item>
-      <title>hyde-hyde</title>
-      <link>https://robotenique.github.io/portfolio/hyde-hyde/</link>
-      <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
+      <title>2nd website version</title>
+      <link>https://robotenique.github.io/portfolio/website2/</link>
+      <pubDate>Sat, 21 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://robotenique.github.io/portfolio/hyde-hyde/</guid>
-      <description>Hyde-hyde is a responsive Hugo theme inspired by @spf13&amp;rsquo;s Hyde and its variant Nate Finch&amp;rsquo;s blog. It was heavily restructured with modularised page layouts for easier maintenance and modification. Hyde-hyde offers awesome features such as nice colour tone, code highlighting, Font-Awesome 5&amp;rsquo;s sidebar icons), a cool portfolio page, more choices for commenting (e.g. GraphComment, Disqus).</description>
-    </item>
-    
-    <item>
-      <title>LaraMod</title>
-      <link>https://robotenique.github.io/portfolio/laramod/</link>
-      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/portfolio/laramod/</guid>
-      <description>LaraMod is another modularisation effort to systematically organising a Laravel based project. The idea stems from my struggle to structure a Laravel-based project so that I can work effectively on individual modules whilst keeping Laravel codebase intact as much as possible and also keeping the project&amp;rsquo;s codebase separate from Laravel.</description>
-    </item>
-    
-    <item>
-      <title>Project P1&#39;s Title</title>
-      <link>https://robotenique.github.io/portfolio/p1/</link>
-      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/portfolio/p1/</guid>
-      <description>Here is a longer summary of the project. You can write as long as you wish.</description>
+      <guid>https://robotenique.github.io/portfolio/website2/</guid>
+      <description>This was my second website, where I used Jekyll to write a few blog posts.</description>
     </item>
     
   </channel>
