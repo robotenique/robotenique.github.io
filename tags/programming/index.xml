@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Robotenique&#39;s Home</title>
+    <link>https://robotenique.github.io/tags/programming/</link>
+    <description>Recent content in programming on Robotenique&#39;s Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 17 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://robotenique.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python map</title>
+      <link>https://robotenique.github.io/posts/2017-03-10-python-map/</link>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-03-10-python-map/</guid>
+      <description>A cool Subway map to know more about the different things you can do with Python!
+by Hairy Sun - Geek blog!</description>
+    </item>
+    
+    <item>
+      <title>Generating grid/image points in Python</title>
+      <link>https://robotenique.github.io/posts/2017-09-17-image-grid-python/</link>
+      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-09-17-image-grid-python/</guid>
+      <description>I was doing some assignment about the Percolation Problem, where given a graph, find if the top of the graph is connected to the bottom. There was some test files included, but I wanted to create my own images.
+The input file of my assignment has, in the first line, the dimensions of the image. The images are always in a square ratio, n x n &amp;ldquo;pixels&amp;rdquo;. The remaining lines of the file contains pairs (a b) of the coordinates in the grid n x n.</description>
+    </item>
+    
+    <item>
+      <title>Atom &amp; Latex</title>
+      <link>https://robotenique.github.io/posts/2017-05-24-atom-latex/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-05-24-atom-latex/</guid>
+      <description>LaTeX is a DSL (domain specific language) that provides powerful typesetting tools. You can write complex mathematical expressions and much more, for example, the following characteristic polynomial expression was rendered using LaTeX (MathJax):
+$$ \chi(\lambda) = \left| \begin{array}{ccc} \lambda - a &amp;amp; -b &amp;amp; -c \\\
+-d &amp;amp; \lambda - e &amp;amp; -f \\\
+-g &amp;amp; -h &amp;amp; \lambda - i \end{array} \right| $$
+There are amazing online software to work with LaTeX such as ShareLaTeX or Overleaf, but sometimes you don&amp;rsquo;t have access to the internet, or want to have a compact environment to do most of your job.</description>
+    </item>
+    
+    <item>
+      <title>Atom editor</title>
+      <link>https://robotenique.github.io/posts/2017-03-21-atom-edit/</link>
+      <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-03-21-atom-edit/</guid>
+      <description>Have you ever heard of Atom? Atom is a text editor, similar to Sublime Text, but with a lot of different features, and much more flexibility and freedom. It&amp;rsquo;s described as A hackable text editor for the 21st century, because it&amp;rsquo;s very easy to create and change many of the settings available, and there&amp;rsquo;s a lot!
+Atom is my personal editor, I prefer using it than the proprietary (but relatively good) Sublime Text, and other MAINSTREAM editors like vi/vim or emacs.</description>
+    </item>
+    
+    <item>
+      <title>Debug C programs using gdb</title>
+      <link>https://robotenique.github.io/posts/2017-03-12-debug-gdb/</link>
+      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-03-12-debug-gdb/</guid>
+      <description>GDB(GNU Project Debugger) is, as the name implies, a debugger with a lot of features to make your life easy when programming in C. Using gdb helps to debug C programs in real execution time, i.e. you can put break points in the program to evaluate the value of variables, detect when something has gone wrong, and many other uses. Here I&amp;rsquo;ll cover the basics that I use to debug simple C programs.</description>
+    </item>
+    
+    <item>
+      <title>Fast and easy Python LAN server</title>
+      <link>https://robotenique.github.io/posts/2017-03-12-python-server/</link>
+      <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-03-12-python-server/</guid>
+      <description>This is a very simple tip, but it&amp;rsquo;s very useful when you want others to access your files, or you want to transfer files easily. Just open the terminal, navigate to the folder you want to serve, and then type
+$ python -m SimpleHTTPServer The server will be created in the IP of your machine.
+To find your IP, type
+$ ifconfig -all or
+$ ip a If you&amp;rsquo;re using Python 3.</description>
+    </item>
+    
+  </channel>
+</rss>

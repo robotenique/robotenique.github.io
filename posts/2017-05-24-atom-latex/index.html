@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.68.3" />
+
+    
+    
+    
+
+<title>Atom &amp; Latex • Robotenique&#39;s Home</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Atom &amp; Latex"/>
+<meta name="twitter:description" content="LaTeX is a DSL (domain specific language) that provides powerful typesetting tools. You can write complex mathematical expressions and much more, for example, the following characteristic polynomial expression was rendered using LaTeX (MathJax):
+$$ \chi(\lambda) = \left| \begin{array}{ccc} \lambda - a &amp; -b &amp; -c \\\
+-d &amp; \lambda - e &amp; -f \\\
+-g &amp; -h &amp; \lambda - i \end{array} \right| $$
+There are amazing online software to work with LaTeX such as ShareLaTeX or Overleaf, but sometimes you don&rsquo;t have access to the internet, or want to have a compact environment to do most of your job."/>
+
+<meta property="og:title" content="Atom &amp; Latex" />
+<meta property="og:description" content="LaTeX is a DSL (domain specific language) that provides powerful typesetting tools. You can write complex mathematical expressions and much more, for example, the following characteristic polynomial expression was rendered using LaTeX (MathJax):
+$$ \chi(\lambda) = \left| \begin{array}{ccc} \lambda - a &amp; -b &amp; -c \\\
+-d &amp; \lambda - e &amp; -f \\\
+-g &amp; -h &amp; \lambda - i \end{array} \right| $$
+There are amazing online software to work with LaTeX such as ShareLaTeX or Overleaf, but sometimes you don&rsquo;t have access to the internet, or want to have a compact environment to do most of your job." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://robotenique.github.io/posts/2017-05-24-atom-latex/" />
+<meta property="article:published_time" content="2017-05-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-24T00:00:00+00:00" /><meta property="og:site_name" content="Title" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.078ba091b52427f83b6a2ede3ec7e4baedcb0759410812219445de6a9418fcba.css" integrity="sha256-B4ugkbUkJ/g7ai7ePsfkuu3LB1lBCBIhlEXeapQY/Lo=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+      CommonHTML: {
+        linebreaks: {automatic: true}
+      },
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }  
+});
+
+</script>
+
+
+</head>
+
+
+    <body class="theme-base-08 layout-reverse">
+    
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+  
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://robotenique.github.io/">Robotenique&#39;s Home</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://robotenique.github.io/img/me.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+        
+      
+      <p class="site__description">
+         COLOCAR ALGUMA COISA AQUIII 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Robotenique&#39;s Home</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Portfolio</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/robotenique" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/juliano-garcia-oliveira" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:julianogarcia_1997@hotmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 - 2020 htr3n
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Atom &amp; Latex</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> May 24, 2017
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/misc">MISC</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/programming">programming</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/environment">environment</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 2 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>LaTeX is a DSL (<em>domain specific language</em>) that provides powerful typesetting tools. You can write complex mathematical expressions and much more, for example, the following characteristic polynomial expression was rendered using LaTeX (MathJax):</p>
+<p>$$  \chi(\lambda) = \left| \begin{array}{ccc}
+\lambda - a &amp; -b &amp; -c \\\<br>
+-d &amp; \lambda - e &amp; -f \\\<br>
+-g &amp; -h &amp; \lambda - i \end{array} \right|  $$</p>
+<p>There are amazing online software to work with LaTeX such as <a href="https://www.sharelatex.com/">ShareLaTeX</a> or <a href="https://www.overleaf.com/">Overleaf</a>, but sometimes you don&rsquo;t have access to the internet, or want to have a compact environment to do most of your job. This is a simple tutorial about how to configure the <a href="/misc/2017/03/21/atom-edit.html">Atom Editor</a> to work with LaTeX.</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/atom-latex.png"
+    alt="atom-latex"
+    decoding="async"
+  />
+</p>
+
+<h2 id="how-to-install">How to install</h2>
+<p>I&rsquo;m assuming you have Atom installed and know how to install plugins in Atom.</p>
+<h3 id="1tex-distribution"><strong>1.TeX distribution</strong></h3>
+<p>To use packages and the full power of LaTeX, I recommend the TeXLive. TeXLive comes with a LOT of packages and utility for LaTeX. The size of the installation is big ( &gt; 800 MB), but you&rsquo;ll have almost everything you need in LaTeX, and is very easy to install.</p>
+<p>The two commands below will install the complete packages that I use, plus a few extra ones (very recommended!).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install texlive
+$ sudo apt-get install texlive-latex-extra
+</code></pre></div><h3 id="2install-compilers-for-latex"><strong>2.Install compilers for LaTeX</strong></h3>
+<p>The Atom plugin depends on some compilers to parse the  <em>.tex</em> files, so we need to install them too. This is a very important step that most people forget and then just blame the plugins&hellip;</p>
+<p>We&rsquo;ll install the <strong>texify</strong>, which is a compilation driver, and <strong>latexmk</strong> to automate the process of generating LaTeX documents.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo apt-get install texify
+$ sudo apt-get install latexmk
+</code></pre></div><h3 id="3atom-plugins"><strong>3.Atom plugins</strong></h3>
+<p>Finally, we&rsquo;ll install the Plugins. You can use LaTeX in Atom with a variety of plugins, here I&rsquo;ll cover the ones that I use.</p>
+<ul>
+<li>
+<p><a href="https://atom.io/packages/language-latex">language-latex</a>
+Add syntax highlighting for <em>.tex</em> in Atom, optional but <strong>very</strong> recommended!</p>
+</li>
+<li>
+<p><a href="https://atom.io/packages/pdf-view">pdf-view</a>
+This neat plugin enables PDF display in Atom, and is used by the next plugin to show your compiled LaTeX file;</p>
+</li>
+<li>
+<p><a href="https://atom.io/packages/latextools">latextools</a>
+This is the most important plugin, as it allows you to compile your .tex file using CTRL + ALT + B.</p>
+</li>
+</ul>
+<p>If everything was correctly installed, <em>latextools</em> will work fine as expected, and that&rsquo;s it!</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/2017-03-21-atom-edit/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Atom editor</span>
+    </a>
+    
+    
+    <a href="/posts/2017-09-17-image-grid-python/" class="navigation-next">
+      <span class="navigation-tittle">Generating grid/image points in Python</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>
