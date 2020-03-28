@@ -36,7 +36,7 @@ The input file of my assignment has, in the first line, the dimensions of the im
       <pubDate>Sun, 12 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://robotenique.github.io/posts/2017-03-12-python-server/</guid>
-      <description>This is a very simple tip, but it&amp;rsquo;s very useful when you want others to access your files, or you want to transfer files easily. Just open the terminal, navigate to the folder you want to serve, and then type
+      <description>This is a very simple tip, but it&amp;rsquo;s very useful when you want others to access your files, or you want to transfer files easily. Just open the terminal, navigate to the folder you want to serve, and then type:
 $ python -m SimpleHTTPServer The server will be created in the IP of your machine.
 To find your IP, type
 $ ifconfig -all or
