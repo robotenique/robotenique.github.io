@@ -115,5 +115,24 @@ DISCLAIMER: You do everything in your &amp;gt;OWN&amp;lt; risk! :D
       <description>This was my second website, where I used Jekyll to write a few blog posts.</description>
     </item>
     
+    <item>
+      <title>Law of Large Numbers Simulator</title>
+      <link>https://robotenique.github.io/portfolio/largenumsim/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/portfolio/largenumsim/</guid>
+      <description>This is a project to demonstrate in graph plotting and real data, Weak Law of Large numbers, which is a very useful Theorem used in statistics. As our website says: &amp;quot; In practice, it (the Weak Law of Large Numbers) dictates that, if repeated enough times, the accumulate results of the same experiment will tend to its real mathematical probabilities.&amp;rdquo;
+The website plots in real time the graph of throwing a dice or a coin the number of times the user specifies, so it&amp;rsquo;s completely interactive, and the user have fully control over the start number, the amount of throws to perform, and even the speed of the plot.</description>
+    </item>
+    
+    <item>
+      <title>1st website version</title>
+      <link>https://robotenique.github.io/portfolio/website1/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/portfolio/website1/</guid>
+      <description>This was my first website. You can check it out for more projects related to my programming work at high school.</description>
+    </item>
+    
   </channel>
 </rss>
