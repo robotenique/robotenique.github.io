@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>environment on Robotenique&#39;s Home</title>
+    <link>https://robotenique.github.io/tags/environment/</link>
+    <description>Recent content in environment on Robotenique&#39;s Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://robotenique.github.io/tags/environment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Atom &amp; Latex</title>
+      <link>https://robotenique.github.io/posts/2017-05-24-atom-latex/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-05-24-atom-latex/</guid>
+      <description>LaTeX is a DSL (domain specific language) that provides powerful typesetting tools. You can write complex mathematical expressions and much more, for example, the following characteristic polynomial expression was rendered using LaTeX (MathJax):
+$$ \chi(\lambda) = \left| \begin{array}{ccc} \lambda - a &amp;amp; -b &amp;amp; -c \\\
+-d &amp;amp; \lambda - e &amp;amp; -f \\\
+-g &amp;amp; -h &amp;amp; \lambda - i \end{array} \right| $$
+There are amazing online software to work with LaTeX such as ShareLaTeX or Overleaf, but sometimes you don&amp;rsquo;t have access to the internet, or want to have a compact environment to do most of your job.</description>
+    </item>
+    
+    <item>
+      <title>Atom editor</title>
+      <link>https://robotenique.github.io/posts/2017-03-21-atom-edit/</link>
+      <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-03-21-atom-edit/</guid>
+      <description>Have you ever heard of Atom? Atom is a text editor, similar to Sublime Text, but with a lot of different features, and much more flexibility and freedom. It&amp;rsquo;s described as A hackable text editor for the 21st century, because it&amp;rsquo;s very easy to create and change many of the settings available, and there&amp;rsquo;s a lot!
+Atom is my personal editor, I prefer using it than the proprietary (but relatively good) Sublime Text, and other MAINSTREAM editors like vi/vim or emacs.</description>
+    </item>
+    
+    <item>
+      <title>Debian Stretch setup</title>
+      <link>https://robotenique.github.io/posts/2017-02-23-debian-stretch/</link>
+      <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-02-23-debian-stretch/</guid>
+      <description>Hello! In this post, I&amp;rsquo;ll show how is the setup that I use, the most common applications I mostly use when programming, some useful plugins, anyway, my complete programming environment. I&amp;rsquo;ll first cover my OS setup, then the applications and finally the customizations. Feel free to contact me if there&amp;rsquo;s any doubt, but I&amp;rsquo;ll try to be clear and concise.
+DISCLAIMER: You do everything in your &amp;gt;OWN&amp;lt; risk! :D
+ The setup I use a dualboot with debian and Windows 10.</description>
+    </item>
+    
+  </channel>
+</rss>
