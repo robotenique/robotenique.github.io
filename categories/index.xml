@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://robotenique.github.io/categories/statistics/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/categories/statistics/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Computer Science</title>

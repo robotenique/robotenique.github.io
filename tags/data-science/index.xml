@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data science on Juliano Garcia</title>
+    <link>https://robotenique.github.io/tags/data-science/</link>
+    <description>Recent content in data science on Juliano Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://robotenique.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monte Carlo simulation of a Gacha Game mechanic</title>
+      <link>https://robotenique.github.io/posts/fortune-cat-simulation/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/fortune-cat-simulation/</guid>
+      <description>Last year I found out about a Gacha game called Saint Seiya Awakening, which I&amp;rsquo;ve tried to play for some time, but then gave up on it. However I still do watch people play it, people who usually have enough time to invest in the game (it demands quite an amount of your time to be at a competitive level). Gacha games are usually free-to-play, but it is full of loot boxes, roulettes, slot machines, microtransactions and everything else that makes the player want to buy stuff in-game.</description>
+    </item>
+    
+  </channel>
+</rss>
