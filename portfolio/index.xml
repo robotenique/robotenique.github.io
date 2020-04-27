@@ -21,6 +21,33 @@
     </item>
     
     <item>
+      <title>Women&#39;s Shoes Prices - Kaggle EDA</title>
+      <link>https://robotenique.github.io/portfolio/shoes-eda/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/portfolio/shoes-eda/</guid>
+      <description>The purpose of this project is to study the Women&amp;rsquo;s Shoes Prices dataset from Kaggle, which contains a list of women&amp;rsquo;s shoes and the prices they were sold. The data was originally made available at Kaggle by the Datafiniti Company. This project was done mainly to showcase some basic EDA techniques (like histograms and ECDF) but at the same time diving deep into more complicated business questions, e.g. using Fuzzy matching to find out the most popular shoe colors in the dataset.</description>
+    </item>
+    
+    <item>
+      <title>Snacker - AI Recommender System</title>
+      <link>https://robotenique.github.io/portfolio/snacker/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/portfolio/snacker/</guid>
+      <description>Snacker is a full-fledged social network for snack lovers all over the world. The website itself was built using the Flask library for the back-end, and the recommendation engine was implemented using a specific collaborative filtering technique called Matrix Factorization. The data was stored using MongoDB for prototyping and testing, more details about the methodology can be found here.</description>
+    </item>
+    
+    <item>
+      <title>Movies Ontology - iMDb</title>
+      <link>https://robotenique.github.io/portfolio/movies-ontology/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/portfolio/movies-ontology/</guid>
+      <description>A knowledge-based systems is an area of study in artificial intelligence which tries to capture human knowledge (which usually are experts in the system) and embedded them into rules in a system. In this specific project iMDb data was used to create an ontology of movies, by parsing iMDb datasets and adding them into the ontology. The modelling of the ontology was made with Protégé, an open-source ontology editor, using a Description Logic called the Web Ontology Language (OWL).</description>
+    </item>
+    
+    <item>
       <title>2nd website version</title>
       <link>https://robotenique.github.io/portfolio/website2/</link>
       <pubDate>Sat, 21 Jan 2017 00:00:00 +0000</pubDate>
