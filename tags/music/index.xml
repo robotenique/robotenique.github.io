@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>music on Juliano Garcia</title>
+    <link>https://robotenique.github.io/tags/music/</link>
+    <description>Recent content in music on Juliano Garcia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://robotenique.github.io/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hyperreality meets Utopian Virtual</title>
+      <link>https://robotenique.github.io/posts/hyperreality-utopian-virtual/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/hyperreality-utopian-virtual/</guid>
+      <description>More real than reality In postmodern semiotics Baudrillard coined the term hyperreality, basically a state/characteristic of something unable to be distinguished from reality. When thinking about the concept itself, it&amp;rsquo;s necessary to understand — in a semiotic sense — what Baudrillard defines as simulation and simulacra. To not delve deep into these subjects here (you can find more in this book), these concepts manifest themselves in postmodern societies with increasingly meta references, for everything.</description>
+    </item>
+    
+  </channel>
+</rss>
