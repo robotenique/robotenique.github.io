@@ -22,6 +22,16 @@ by Hairy Sun - Geek blog!</description>
     </item>
     
     <item>
+      <title>Ethically Aware Recommender Systems in Social Media</title>
+      <link>https://robotenique.github.io/posts/ethically-aware-systems/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/ethically-aware-systems/</guid>
+      <description>This post is based on an article I wrote some time ago; There may be some inconsistencies with the references, sorry.
+Reccomender Systems In a world where digital information is increasing every year, recommender systems are very important tools to handle the challenge of information overload. A recommender system is a type of information filtering system with the ability to filter information from a large amount of data generated dynamically, according to a given preference, observed behavior or interest from the user [1].</description>
+    </item>
+    
+    <item>
       <title>Hyperreality meets Utopian Virtual</title>
       <link>https://robotenique.github.io/posts/hyperreality-utopian-virtual/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
