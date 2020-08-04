@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>art</title>
+      <link>https://robotenique.github.io/tags/art/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/tags/art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://robotenique.github.io/tags/programming/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AI</title>
@@ -30,15 +48,6 @@
     </item>
     
     <item>
-      <title>art</title>
-      <link>https://robotenique.github.io/tags/art/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/tags/art/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>music</title>
       <link>https://robotenique.github.io/tags/music/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
@@ -53,15 +62,6 @@
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://robotenique.github.io/tags/semiotics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://robotenique.github.io/tags/programming/</link>
-      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/tags/programming/</guid>
       <description></description>
     </item>
     

@@ -22,6 +22,16 @@ by Hairy Sun - Geek blog!</description>
     </item>
     
     <item>
+      <title>Generative art using Bézier Curves</title>
+      <link>https://robotenique.github.io/posts/bezier-curve-gen/</link>
+      <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/bezier-curve-gen/</guid>
+      <description>Bézier Curves I recently started toying with Processing and generative art, and in this little journey I&amp;rsquo;ve come across a specific method for curve drawing called the Bézier Curve. It is a parametric curve that is widely used in computer graphics, almost everywhere you need to draw curves: digital typography, vector graphics, illustration software (Adobe Illustrator, Inkscape), animation, etc.
+This curve has a very interesting mathematical definition (it also has a recursive definition) and can be defined for any degree n.</description>
+    </item>
+    
+    <item>
       <title>Ethically Aware Recommender Systems in Social Media</title>
       <link>https://robotenique.github.io/posts/ethically-aware-systems/</link>
       <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
