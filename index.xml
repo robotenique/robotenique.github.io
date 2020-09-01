@@ -22,6 +22,15 @@ by Hairy Sun - Geek blog!</description>
     </item>
     
     <item>
+      <title>Histograms for efficient gradient boosting</title>
+      <link>https://robotenique.github.io/posts/gbm-histogram/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/gbm-histogram/</guid>
+      <description>Gradient Boosting GBM or Gradient Boosting Machines are a form of machine learning algorithms based on additive models. The currently most widely known implementations of it are the XGBoost and LightGBM libraries, and they are common choices for modeling supervised learning problems based on structured data. Generally, the output model in boosting is created by iteratively building weak learners, where each new weak learner weights more the mispredictions of the last learner, and so on.</description>
+    </item>
+    
+    <item>
       <title>Generative art using Bézier Curves</title>
       <link>https://robotenique.github.io/posts/bezier-curve-gen/</link>
       <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
