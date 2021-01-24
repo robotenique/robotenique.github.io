@@ -640,9 +640,12 @@ a.badge-tag {
     position: fixed;
     text-align: left;
     top: 0;
-    width: 21rem; }
+    width: 18rem; }
   .sidebar-sticky {
-    position:absolute;right:1rem;bottom:1rem;left:1rem}
+    left: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem; }
   .content {
     margin-left: 20rem;
     margin-right: 2rem;
@@ -751,8 +754,7 @@ a.badge-tag {
   color: #75b5aa; }
 
 .theme-base-0d .sidebar {
-  background-color: #6a9fb5;
-}
+  background-color: #6a9fb5; }
 
 .theme-base-0d .content a {
   color: #6a9fb5; }
@@ -779,27 +781,3 @@ a.badge-tag {
   color: #8f5536; }
 
 /*# sourceMappingURL=hyde-hyde.css.map */
-
-/* custom stuff to center image*/
-img[src$='#center']
-{
-    display: block;
-    margin: 0.7rem auto; /* you can replace the vertical '0.7rem' by
-                            whatever floats your boat, but keep the
-                            horizontal 'auto' for this to work */
-    /* whatever else styles you fancy here */
-}
-
-img[src$='#floatleft']
-{
-    float:left;
-    margin: 0.7rem;      /* this margin is totally up to you */
-    /* whatever else styles you fancy here */
-}
-
-img[src$='#floatright']
-{
-    float:right;
-    margin: 0.7rem;      /* this margin is totally up to you */
-    /* whatever else styles you fancy here */
-}

@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Python map</title>
-      <link>https://robotenique.github.io/posts/2017-03-10-python-map/</link>
-      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/posts/2017-03-10-python-map/</guid>
-      <description>A cool Subway map to know more about the different things you can do with Python!
-by Hairy Sun - Geek blog!</description>
-    </item>
-    
-    <item>
       <title>Generating grid/image points in Python</title>
       <link>https://robotenique.github.io/posts/2017-09-17-image-grid-python/</link>
       <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
@@ -42,6 +32,16 @@ $ python -m SimpleHTTPServer The server will be created in the IP of your machin
 To find your IP, type
 $ ifconfig -all or
 $ ip a If you&amp;rsquo;re using Python 3.</description>
+    </item>
+    
+    <item>
+      <title>Python map</title>
+      <link>https://robotenique.github.io/posts/2017-03-10-python-map/</link>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-03-10-python-map/</guid>
+      <description>A cool Subway map to know more about the different things you can do with Python!
+by Hairy Sun - Geek blog!</description>
     </item>
     
   </channel>

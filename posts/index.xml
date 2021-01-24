@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Python map</title>
-      <link>https://robotenique.github.io/posts/2017-03-10-python-map/</link>
-      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/posts/2017-03-10-python-map/</guid>
-      <description>A cool Subway map to know more about the different things you can do with Python!
-by Hairy Sun - Geek blog!</description>
-    </item>
-    
-    <item>
       <title>Sleep - 2020</title>
       <link>https://robotenique.github.io/posts/sleep-2020/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
@@ -151,6 +141,16 @@ $ ip a If you&amp;rsquo;re using Python 3.</description>
       <description>Hello! In this post, I&amp;rsquo;ll show how is the setup that I use, the most common applications I mostly use when programming, some useful plugins, anyway, my complete programming environment. I&amp;rsquo;ll first cover my OS setup, then the applications and finally the customizations. Feel free to contact me if there&amp;rsquo;s any doubt, but I&amp;rsquo;ll try to be clear and concise.
 DISCLAIMER: You do everything in your &amp;gt;OWN&amp;lt; risk! :D
  The setup I use a dualboot with debian and Windows 10.</description>
+    </item>
+    
+    <item>
+      <title>Python map</title>
+      <link>https://robotenique.github.io/posts/2017-03-10-python-map/</link>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/2017-03-10-python-map/</guid>
+      <description>A cool Subway map to know more about the different things you can do with Python!
+by Hairy Sun - Geek blog!</description>
     </item>
     
   </channel>
