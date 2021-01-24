@@ -2,10 +2,45 @@
 <html lang="en">
     
     <head>
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+ 
+  MathJax.Hub.Config({
+      CommonHTML: {
+        linebreaks: {automatic: true}
+      },
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }  
+});
+ 
+</script>
+
     <link href="https://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="generator" content="Hugo 0.68.3" />
@@ -68,7 +103,11 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://robotenique.github.io/">Juliano Garcia</a>
+        <a href="https://robotenique.github.io/">
+        
+          Juliano Garcia
+        
+        </a>
       </span>
       
         
@@ -123,6 +162,7 @@
 	
 	
 	
+	
 	<a href="https://github.com/robotenique" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
 	
 	
@@ -141,7 +181,11 @@
 	
 	
 	
+	
 	<a href="mailto:julianogarcia_1997@hotmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
 	
 </section>
 
@@ -175,7 +219,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
                             <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
                         </p>
                         <div class="project__featured-image">
-                            <img src="tcc.gif"  alt="A Study on Gradient Boosting Classifiers">
+                            
+                                <img src="tcc.gif"  alt="A Study on Gradient Boosting Classifiers">
+                            
                         </div>
                         <div class="project__summary">
                                 <p>Gradient Boosting Machines (GBMs) is a supervised machine learning algorithm that has been achieving state-of-the-art results in a wide range of different problems and winning machine learning competitions. When building any machine learning model, the hyperparameter optimization can become a costly and time-consuming task depending on the number and the hyperparameter space of the tuning procedure. Machine learning users that are not experienced researchers or data science professionals can struggle to define which hyperparameters and values to choose when starting the model tuning, especially with newer GBMs implementations like the XGBoost and LightGBM library. In this work, a large-scale experiment with 70 datasets is conducted using the OpenML platform, measuring the sensitivity of binary classifiers evaluation metrics to changes in three LightGBM hyperparameters.</p>
@@ -194,7 +240,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/robotenique/EDA-shoes-data"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="shoes-eda.png" alt="Women&#39;s Shoes Prices - Kaggle EDA">
+                    
+                        <img class="project__image img-responsive" src="shoes-eda.png" alt="Women&#39;s Shoes Prices - Kaggle EDA">
+                    
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
@@ -216,7 +264,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/robotenique/snacker"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="snacker.png" alt="Snacker - AI Recommender System">
+                    
+                        <img class="project__image img-responsive" src="snacker.png" alt="Snacker - AI Recommender System">
+                    
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
@@ -238,7 +288,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://github.com/robotenique/movies-ontology"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="movies-ontology.png" alt="Movies Ontology - iMDb">
+                    
+                        <img class="project__image img-responsive" src="movies-ontology.png" alt="Movies Ontology - iMDb">
+                    
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
@@ -260,7 +312,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://www.linux.ime.usp.br/~robotenique"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="website2.png" alt="2nd website version">
+                    
+                        <img class="project__image img-responsive" src="website2.png" alt="2nd website version">
+                    
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
@@ -282,7 +336,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://www.linux.ime.usp.br/~robotenique/old/prog/wk/"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="lln.png" alt="Law of Large Numbers Simulator">
+                    
+                        <img class="project__image img-responsive" src="lln.png" alt="Law of Large Numbers Simulator">
+                    
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
@@ -305,7 +361,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12" href="https://www.linux.ime.usp.br/~robotenique/old/"
                     target="_blank" rel="noopener noreferrer">
-                    <img class="project__image img-responsive" src="website1.png" alt="1st website version">
+                    
+                        <img class="project__image img-responsive" src="website1.png" alt="1st website version">
+                    
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
                     <span class="project__title">
@@ -346,7 +404,7 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 
 
 
