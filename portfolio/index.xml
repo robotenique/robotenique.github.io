@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Incognito Search - Chrome Extension</title>
+      <link>https://robotenique.github.io/portfolio/incognito-search/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/portfolio/incognito-search/</guid>
+      <description>Simple Chrome Extension that searches in an Incognito window for the selected text. Built using Javascript.</description>
+    </item>
+    
+    <item>
       <title>Movies Ontology - iMDb</title>
       <link>https://robotenique.github.io/portfolio/movies-ontology/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
