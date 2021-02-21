@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+ 
+  MathJax.Hub.Config({
+      CommonHTML: {
+        linebreaks: {automatic: true}
+      },
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }  
+});
+ 
+</script>
+
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.68.3" />
+
+    
+    
+    
+
+<title>Useful Nonlinear Models in Python • Juliano Garcia</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Useful Nonlinear Models in Python"/>
+<meta name="twitter:description" content="Context  Linear x Nonlinear Fitting curves in Python Initial Guessing and the Jacobian   Convex/Concave Models  Exponential Decay Exponential decay with lower asymptote Asymptotic Model (Negative Exponential) Asymptotic Model (constrained: starting from 0) Power Regression   Sygmoidal Curves  Logistic Curve Gompertz Function   Conclusion &#43; Code    Context  All models are wrong, but some are useful
+ In statistics, we say that a regression is linear when it&rsquo;s linear in the parameters."/>
+
+<meta property="og:title" content="Useful Nonlinear Models in Python" />
+<meta property="og:description" content="Context  Linear x Nonlinear Fitting curves in Python Initial Guessing and the Jacobian   Convex/Concave Models  Exponential Decay Exponential decay with lower asymptote Asymptotic Model (Negative Exponential) Asymptotic Model (constrained: starting from 0) Power Regression   Sygmoidal Curves  Logistic Curve Gompertz Function   Conclusion &#43; Code    Context  All models are wrong, but some are useful
+ In statistics, we say that a regression is linear when it&rsquo;s linear in the parameters." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://robotenique.github.io/posts/nonlinear-models/" />
+<meta property="article:published_time" content="2021-02-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-20T00:00:00+00:00" /><meta property="og:site_name" content="Robotenique&#39;s Home" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.154a70bed4ff459a43893fd61cfd6162bf3d46e9263c5f7c228430af7de60eb7.css" integrity="sha256-FUpwvtT/RZpDiT/WHP1hYr89RukmPF98IoQwr33mDrc=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-08 layout-reverse">
+    
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://robotenique.github.io/">
+        
+          Juliano Garcia
+        
+        </a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://robotenique.github.io/img/me.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Data &amp; Computer Scientist. Digressions about statistics, technology or anything else that comes in my mind. Opinions are my own. 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Juliano Garcia</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	
+	<a href="https://github.com/robotenique" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/juliano-garcia-oliveira" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:julianogarcia_1997@hotmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Useful Nonlinear Models in Python</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Feb 20, 2021
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/python">PYTHON</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/statistics">STATISTICS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/data-science">data science</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/python">python</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/programming">programming</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 17 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <div class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#context">Context</a>
+      <ul>
+        <li><a href="#linear-x-nonlinear">Linear x Nonlinear</a></li>
+        <li><a href="#fitting-curves-in-python">Fitting curves in Python</a></li>
+        <li><a href="#initial-guessing-and-the-jacobian">Initial Guessing and the Jacobian</a></li>
+      </ul>
+    </li>
+    <li><a href="#convexconcave-models">Convex/Concave Models</a>
+      <ul>
+        <li><a href="#exponential-decay">Exponential Decay</a></li>
+        <li><a href="#exponential-decay-with-lower-asymptote">Exponential decay with lower asymptote</a></li>
+        <li><a href="#asymptotic-model-negative-exponential">Asymptotic Model (Negative Exponential)</a></li>
+        <li><a href="#asymptotic-model-constrained-starting-from-0">Asymptotic Model (constrained: starting from 0)</a></li>
+        <li><a href="#power-regression">Power Regression</a></li>
+      </ul>
+    </li>
+    <li><a href="#sygmoidal-curves">Sygmoidal Curves</a>
+      <ul>
+        <li><a href="#logistic-curve">Logistic Curve</a></li>
+        <li><a href="#gompertz-function">Gompertz Function</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion--code">Conclusion + Code</a></li>
+  </ul>
+</nav>
+</div>
+<h2 id="context">Context</h2>
+<blockquote>
+<p>All models are wrong, but some are useful</p>
+</blockquote>
+<p>In statistics, we say that a regression is linear when it&rsquo;s linear in the parameters. Fitting linear models is an easy task, we can use the least squares method and obtain the optimal parameters for our model. In Python you can achieve this using a bunch of libraries like <code>scipy</code>, <code>scikit-learn</code>, <code>numpy</code>, <code>statsmodels</code>, etc. However, not all problems can be solved with pure linear models. There are a lot of useful nonlinear models that guarantee useful mathematical properties and are also highly interpretable. Since I tend to recurrently fit these models, t article will serve as a future reference for myself whenever I need to use them in the future, with easy to implement code (in Python).</p>
+<p>Now, before we get into the models, it&rsquo;s important to note the context about <strong>why</strong> and <strong>when</strong> would you use these types of models. They&rsquo;re not necessarily a substitute for your complex (XGBoost, LightGBM, Random Forest, Neural Network, etc.) machine learning model. It&rsquo;s best to think about these nonlinear models in the context of <strong>curve fitting</strong>, i.e. you want to model a phenomena using a curve that you can interpret later. So, here are some considerations as to why would you use them:</p>
+<ul>
+<li>
+<p><strong>Interpretability</strong>: If you model an event using curves, your outcome is much more interpretable, since usually the mathematical equation has a meaning to each parameter. Important: this doesn&rsquo;t mean you lose the power of your complex machine learning model, as you can still use the machine learning model alongside the curve you&rsquo;re fitting (e.g. segment your data using the model, then fit interpretable curves on each segment). This will help not only the person that built the model in the future but also the business stakeholders. It&rsquo;s much easier to explain what your model is doing if the output is interpretable.</p>
+</li>
+<li>
+<p><strong>Mathematical Properties</strong>: Sometimes it&rsquo;s really important to guarantee some mathematical property on your model output. For example if you&rsquo;re modelling <code>age x height</code> of some insect it probably make sense that your height prediction should be monotonically increasing as age increases. Describing these phenomena using mathematical equations give you the power to apply this constraint in the modelling phase: You just fit a function that has this monotonic property.</p>
+</li>
+</ul>
+<h3 id="linear-x-nonlinear">Linear x Nonlinear</h3>
+<p>It&rsquo;s important to distinguish that when I say <strong>nonlinear</strong> I mean nonlinear in the parameters. So, for example, a quadratic equation $y = ax^2 + bx + c$ is linear, because this model is linear in the parameters $a, b, c$. The model might not be linear in $x$, but it can still be linear in the parameters.</p>
+<p>To give more clarity about linear and nonlinear models, consider these examples:</p>
+<p>$$
+\begin{equation}
+y = \beta_0 + \beta_1 x
+\end{equation}
+$$</p>
+<p>$$
+\begin{equation}
+y = \beta_0 (1 + \beta_1)^x
+\end{equation}
+$$</p>
+<p>$$
+\begin{equation}
+y = \ \beta_0\cdot\sin\left(x^{\beta_1}\right)\ +\ \beta_2\cdot\cos\left(e^{x\beta_3}\right)\ +\ \beta_4
+\end{equation}
+$$</p>
+<p>Equation $(1)$ is a simple line, and the parameters $\beta_0, \beta_1$ are linear on $y$, so this is an example of a linear model. Equation $(2)$ is what we call an <a href="https://en.wikipedia.org/wiki/Exponential_growth">Exponential Growth</a> formula, where usually $\beta_0$ represents the starting point, $x$ is a time measure and $\beta_1$ (usually called $r$) represents the growth rate. In this case we want to obtain the starting point and the growth rate; At first you might think that $(2)$ is nonlinear, however you could manipulate the formula to obtain a linear parameterization:</p>
+<p>$$
+y = \beta_0 (1 + \beta_1)^x \\\<br>
+log(y) = log(\beta_0) + x\cdot log(1 + \beta_1)
+$$</p>
+<p>And then call $y'=log(y)$, $\beta_0&rsquo; = log(\beta_0)$, $\beta_1'=log(1 + \beta_1)$, you can re-write the Exponential Growth as:</p>
+<p>$$y&rsquo; = \beta_0&rsquo; + \beta_1&rsquo;x$$</p>
+<p>And fit a OLS (Ordinary Least Squares) using this formula, as this is a linear model (this is called a <a href="https://en.wikipedia.org/wiki/Log-linear_model">log-linear model</a>)! Finally, equation $(3)$ is a nonlinear model, as the regression is nonlinear in the parameters $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4$ (I hope so, as I created this equation on the fly - if you find a linear parameterization for this equation please let me know).</p>
+<p>In this article I&rsquo;ll first present the main tools we&rsquo;ll be using to fit the models, and then explain a series of useful nonlinear models + code + graph of the model for whenever you need to fit such marvelous equations. I also won&rsquo;t go deeper into each model purpose and usage, as it&rsquo;s not the point of the article.</p>
+<h3 id="fitting-curves-in-python">Fitting curves in Python</h3>
+<p>A great portion on this article was based on another <a href="https://www.statforbiology.com/nonlinearregression/usefulequations">blogpost</a>, that was aimed at R users, and used R libraries with ready-made equations and built-in routines to facilitate the life of the data scientist. Even though I use R sometimes, most of the time I&rsquo;m using Python, so it&rsquo;s nice to keep my project&rsquo;s codebase with the minimum amount of distinct programming languages. Sadly, there isn&rsquo;t easy/widespread libraries in Python that have these models built-in (if you know any, please let me know!), so we&rsquo;ll have to implement the models and be creative in the curve fitting process when needed, especially when choosing the initial parameters guess.</p>
+<p>Besides the holy trinity (Pandas, Matplotlib and Numpy), these are the main libraries we&rsquo;ll use, for fitting purposes:</p>
+<ul>
+<li><a href="https://www.scipy.org">Scipy</a></li>
+<li><a href="https://www.sympy.org/en/index.html">Sympy</a></li>
+</ul>
+<p>We&rsquo;ll mostly use the optimization procedures from Scipy&rsquo;s <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html"><code>curve_fit</code></a>. The main parameters we&rsquo;ll be using are:</p>
+<ul>
+<li><code>f</code>: The function to call when optimizing, i.e. your model. It must have signature similar to <code>my_fn(x, a, b, c, d, ...)</code>, where <code>x</code> is your <code>x</code> and <code>a, b, c, d, ...</code> are other parameters. There are other valid signatures, but let&rsquo;s start with this simple one.</li>
+<li><code>jac</code>: <strong>Optional.</strong> The function that returns the Jacobian of your function <code>f</code>. Sometimes it makes the optimization easier as the optimizer won&rsquo;t have to numerically approximate the gradient of your function.</li>
+<li><code>xdata</code>: The <code>x</code> values</li>
+<li><code>ydata</code>: The <code>y</code> values</li>
+<li><code>p0</code>: <strong>Optional (but highly recommended for nonlinear models).</strong> The initial guess for the parameters</li>
+<li><code>bounds</code>: <strong>Optional.</strong>  Constraints for the possible values of each parameter (useful to control general behavior of the optimization)</li>
+<li><code>maxfev</code>: <strong>Optional.</strong>  Maximum number of function evaluations (basically, how many iterations).</li>
+</ul>
+<p>The <code>curve_fit</code> returns the parameters from the optimization, which is what defines the model.</p>
+<p>These models also require a somewhat good mathematical knowledge (basic calculus and functions), so that you know what you&rsquo;re doing. Finally, I&rsquo;ll also use extensively the <strong>amazing</strong> tool <a href="https://www.desmos.com">Desmos</a> to plot our equations. The full code will be available in a Github repo linked at the end of the article.</p>
+<h3 id="initial-guessing-and-the-jacobian">Initial Guessing and the Jacobian</h3>
+<p>For nonlinear models sometimes it&rsquo;s crucial that we give the optimizer a good initial guess (<code>p0</code>) for the parameters. Most of the fits I&rsquo;ll present won&rsquo;t work without a good guess of their parameters. In R the library <a href="https://cran.r-project.org/web/packages/drc/index.html">drc</a> has built-in routines that helps the user by selecting a good initial configuration of parameters. However I didn&rsquo;t found something similar in Python, so we&rsquo;ll have to rely on mathematical intuition and by looking at our dataset. However, I think these routines could be easily implemented, you could write a grid search routine that selects an initial parameter guess and then pass it to <code>curve_fit</code> via the <code>p0</code> argument (but what&rsquo;s the fun in that?).</p>
+<p>Here&rsquo;s an example of a bad fit, when you don&rsquo;t pass the <code>p0</code> parameter. The model here is an Exponential Decay, presented in the next section and fitted on a chemical reaction substance degradation data. The data is represented in red/pink.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>exponential_model,
+    jac<span style="color:#f92672">=</span>exponential_model_jac, 
+    xdata<span style="color:#f92672">=</span>degradation_df<span style="color:#f92672">.</span>time,
+    ydata<span style="color:#f92672">=</span>degradation_df<span style="color:#f92672">.</span>conc,
+)
+</code></pre></div>
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_1.png"
+    alt="Bad"
+    decoding="async"
+  />
+</p>
+
+<p>In the snippets below I&rsquo;ll also provide the <a href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">Jacobian</a> function for each model. They&rsquo;re not needed for the fits, as the <code>curve_fit</code> can approximate the gradient of your function numerically, but I&rsquo;ll present them here for reference (sometimes you might need to take a look at the partial derivatives of your model, you never know). The Jacobian here is simply a column vector with the partial derivatives of your function w.r.t. all of its parameters. I&rsquo;ll use <code>Sympy</code> to automatically differentiate the expressions, but you could use Wolfram Alpha or the good old pen and paper.</p>
+<p>Here&rsquo;s an example of how to calculate the partial derivatives of a function using <code>Sympy</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+a, b, c, x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#34;a b c x&#34;</span>)
+expr <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span>x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> b<span style="color:#f92672">*</span>x <span style="color:#f92672">+</span> c
+diff(expr, a), diff(expr, b), diff(expr, c)
+</code></pre></div><p>$(x^2, x, 1)$</p>
+<h2 id="convexconcave-models">Convex/Concave Models</h2>
+<p><strong>IMPORTANT:</strong> Not all of these models are nonlinear; Some of them can actually be transformed into a linear model - I&rsquo;m showcasing how one might proceed fitting them directly.</p>
+<h3 id="exponential-decay">Exponential Decay</h3>
+<p>Exponential Decay models have a range of different applications for chemistry (substance decay), biology, econometrics, etc.</p>
+<p><strong>General parameterisation:</strong></p>
+<p>$$Y = a\cdot e^{k\cdot X}$$</p>
+<p><strong>Parameters interpretation:</strong></p>
+<ul>
+<li>$a$ is the value of $Y$ when $X = 0$</li>
+<li>$k$ is the relative increase or decrease of  $Y$ for a unit increase of $X$</li>
+</ul>
+
+<iframe src="https://www.desmos.com/calculator/h2qrjhvcln" width="100%" style="min-height:500px"></iframe>
+
+<p>Here we use data on chemical reaction substance degradation, i.e. as time passes the concentration of some substance decreases as it degrades. We want to find the rate the substance degrades overtime.
+As we saw earlier, if we just pass the function for the <code>curve_fit</code> the result won&rsquo;t be ideal. So we need to examine our data and our model and provide a good initial guess for the model.</p>
+<p><strong>This is why it&rsquo;s important that you know exactly what you&rsquo;re trying to model and what the parameters represent!</strong> Fit then Predict won&rsquo;t work =)</p>
+<p>From looking at the data and our parameterisation, we can guess that:</p>
+<ul>
+<li>the value of $a$ should be closer to <code>100</code></li>
+<li>the value of <code>k</code> should be negative, as the data shows an exponential decay behavior.</li>
+</ul>
+<p>Let&rsquo;s think about <code>k = -1</code> with <code>a=100</code>. In <code>x=40</code> the <code>y</code> value would be <code>100*exp(-40)</code>, which results in a very small value (when in fact it should result in something close to 10). So <code>k</code> should be much smaller, for example <code>-1e-3</code>.</p>
+<p>Let&rsquo;s then try the fit with <strong>p0=[100, -1e-3]</strong> and see what happens:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## functions</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exponential_model</span>(x, a, k):
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exponential_model_jac</span>(x, a, k):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x), a <span style="color:#f92672">*</span> x <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x)])<span style="color:#f92672">.</span>T  <span style="color:#75715e"># transform into column</span>
+
+<span style="color:#75715e">## fit</span>
+res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>exponential_model,
+    jac<span style="color:#f92672">=</span>exponential_model_jac,
+    xdata<span style="color:#f92672">=</span>degradation_df<span style="color:#f92672">.</span>time,
+    ydata<span style="color:#f92672">=</span>degradation_df<span style="color:#f92672">.</span>conc,
+    p0<span style="color:#f92672">=</span>[<span style="color:#ae81ff">100</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1e-3</span>],
+    bounds<span style="color:#f92672">=</span>(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf, [np<span style="color:#f92672">.</span>inf, <span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># k cannot be greater than 0</span>
+)
+</code></pre></div>
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_2.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<p>Much better!</p>
+<h3 id="exponential-decay-with-lower-asymptote">Exponential decay with lower asymptote</h3>
+<p><strong>General parameterisation:</strong></p>
+<p>$$Y = b + (a - b)\cdot e^{k\cdot X}$$</p>
+<p><strong>Parameters interpretation:</strong></p>
+<ul>
+<li>$a$ is the value of $Y$ when $X = 0$</li>
+<li>$b$ is the lower asymptote where the decay will stabilize</li>
+<li>$k$ is the relative increase or decrease of  $Y$ for a unit increase of $X$</li>
+</ul>
+
+<iframe src="https://www.desmos.com/calculator/4lrdcn5dd8" width="100%" style="min-height:500px"></iframe>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## functions</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exponential_decay_asymptote</span>(x, a, b, k):
+    <span style="color:#66d9ef">return</span> b <span style="color:#f92672">+</span> (a <span style="color:#f92672">-</span> b) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exponential_decay_asymptote_jac</span>(x, a, b, k):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x), <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x), x <span style="color:#f92672">*</span> (a <span style="color:#f92672">-</span> b) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x)])<span style="color:#f92672">.</span>T
+
+
+offset <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>  <span style="color:#75715e"># manual concentration offset for illustration purpose</span>
+<span style="color:#75715e">## fit</span>
+res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>exponential_decay_asymptote,
+    jac<span style="color:#f92672">=</span>exponential_decay_asymptote_jac,
+    xdata<span style="color:#f92672">=</span>degradation_df<span style="color:#f92672">.</span>time,
+    ydata<span style="color:#f92672">=</span>degradation_df<span style="color:#f92672">.</span>conc <span style="color:#f92672">+</span> offset,
+    p0<span style="color:#f92672">=</span>[<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1e-3</span>],  <span style="color:#75715e"># putting 10 as a starting point for the lower asymptote</span>
+    bounds<span style="color:#f92672">=</span>(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf, [np<span style="color:#f92672">.</span>inf, np<span style="color:#f92672">.</span>inf, <span style="color:#ae81ff">0</span>]),  <span style="color:#75715e"># k cannot be greater than 0</span>
+)
+a, b, k <span style="color:#f92672">=</span> res
+</code></pre></div>
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_3.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<h3 id="asymptotic-model-negative-exponential">Asymptotic Model (Negative Exponential)</h3>
+<p>Basically the opposite of the exponential decay model. It can be used to describe phenomena where $Y$ has a limited growth as $X$ goes to infinity.</p>
+<blockquote>
+<p>For example, if $Y$ is the length of a fish and $X$ represents its age, we expect a growth (increase in the fish length) as it ages, but it won&rsquo;t constantly increase in length, it will probably stabilize on maximum obtainable length. This fish example was based on the von Bertalanffy law. Also, we don&rsquo;t expect the fish to have $0$ length when it&rsquo;s born, so the common parameterisation of this type of model also has a parameter to control this.</p>
+</blockquote>
+<p><strong>General parameterisation:</strong></p>
+<p>$$Y = b - (b - a)\cdot e^{-k\cdot X}$$</p>
+<p><strong>Parameters interpretation:</strong></p>
+<ul>
+<li>$a$ is the value of $Y$ when $X = 0$</li>
+<li>$b$ is the upper asymptote where the growth will stabilize (maximum attainable value for $Y$)</li>
+<li>$k$ is the relative increase or decrease of  $Y$ for a unit increase of $X$</li>
+</ul>
+
+<iframe src="https://www.desmos.com/calculator/xrdydhnkjv" width="100%" style="min-height:500px"></iframe>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## functions</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">negative_exponential_asymptote</span>(x, a, b, k):
+    <span style="color:#66d9ef">return</span> b <span style="color:#f92672">-</span> (b <span style="color:#f92672">-</span> a) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>k <span style="color:#f92672">*</span> x)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">negative_exponential_asymptote_jac</span>(x, a, b, k):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array(
+        [np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>k <span style="color:#f92672">*</span> x), <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>k <span style="color:#f92672">*</span> x), <span style="color:#f92672">-</span>x <span style="color:#f92672">*</span> (a <span style="color:#f92672">-</span> b) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>k <span style="color:#f92672">*</span> x)]
+    )<span style="color:#f92672">.</span>T
+
+
+<span style="color:#75715e">## fit</span>
+res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>negative_exponential_asymptote,
+    jac<span style="color:#f92672">=</span>negative_exponential_asymptote_jac,
+    xdata<span style="color:#f92672">=</span>growth_data_df<span style="color:#f92672">.</span>time,
+    ydata<span style="color:#f92672">=</span>growth_data_df<span style="color:#f92672">.</span>length,
+    p0<span style="color:#f92672">=</span>[
+        <span style="color:#ae81ff">0</span>,
+        <span style="color:#ae81ff">200</span>,
+        <span style="color:#ae81ff">1e-3</span>,
+    ],  <span style="color:#75715e"># Y can start at 0 when X=0, the asymptote guess is 200 and the rate guess is 1e-3</span>
+    bounds<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0</span>, [np<span style="color:#f92672">.</span>inf, np<span style="color:#f92672">.</span>inf, <span style="color:#ae81ff">1</span>]),  <span style="color:#75715e"># adding constraints</span>
+)
+a, b, k <span style="color:#f92672">=</span> res
+</code></pre></div>
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_4.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<h3 id="asymptotic-model-constrained-starting-from-0">Asymptotic Model (constrained: starting from 0)</h3>
+<p>Sometimes your model needs to start from 0 (i.e. $a = 0$ from the previous equation). This results in a simpler parameterisation, albeit with the same behavior.</p>
+<p><strong>General parameterisation:</strong></p>
+<p>$$Y = b\cdot (1 - e^{-k\cdot X})$$</p>
+<p><strong>Parameters interpretation:</strong></p>
+<ul>
+<li>$b$ is the upper asymptote where the growth will stabilize (maximum attainable value for $Y$)</li>
+<li>$k$ is the relative increase or decrease of  $Y$ for a unit increase of $X$</li>
+</ul>
+
+<iframe src="https://www.desmos.com/calculator/rjtl4lqhkm" width="100%" style="min-height:500px"></iframe>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## functions</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">negative_exponential</span>(x, b, k):
+    <span style="color:#66d9ef">return</span> b <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>k <span style="color:#f92672">*</span> x))
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">negative_exponential_jac</span>(x, b, k):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>k <span style="color:#f92672">*</span> x), b <span style="color:#f92672">*</span> x <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>k <span style="color:#f92672">*</span> x)])<span style="color:#f92672">.</span>T
+
+
+offset <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">20</span>
+<span style="color:#75715e">## fit</span>
+res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>negative_exponential,
+    jac<span style="color:#f92672">=</span>negative_exponential_jac,
+    xdata<span style="color:#f92672">=</span>growth_data_df<span style="color:#f92672">.</span>time,
+    ydata<span style="color:#f92672">=</span>growth_data_df<span style="color:#f92672">.</span>length <span style="color:#f92672">+</span> offset,
+    p0<span style="color:#f92672">=</span>[<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">1e-3</span>],  <span style="color:#75715e"># the asymptote guess is 200 and the rate guess is 1e-3</span>
+    bounds<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0</span>, [np<span style="color:#f92672">.</span>inf, <span style="color:#ae81ff">3</span>]),  <span style="color:#75715e"># adding constraints</span>
+)
+b, k <span style="color:#f92672">=</span> res
+</code></pre></div>
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_5.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<h3 id="power-regression">Power Regression</h3>
+<p><strong>General parameterisation:</strong></p>
+<p>$$Y = a\cdot X^{b}$$</p>
+<p><strong>Parameters interpretation:</strong></p>
+<ul>
+<li>$a$ is the value of $Y$ when $X = 0$</li>
+<li>$b$ is the power (controls how $Y$ increases relative to $X$</li>
+</ul>
+<hr>
+<p>The Power Regression is equivalent to an exponential curve but with the logarithm of $X$:</p>
+<p>$$aX^b = a\cdot e^{log(X^b)} = a\cdot e^{b\cdot log(X)}$$</p>
+
+<iframe src="https://www.desmos.com/calculator/zdvqmzspbg" width="100%" style="min-height:500px"></iframe>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## functions</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">power_regr</span>(x, a, b):
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>power(x, b)
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">power_regr_jac</span>(x, a, b):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([np<span style="color:#f92672">.</span>power(x, b), a <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>power(x, b) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>log(x)])<span style="color:#f92672">.</span>T
+
+
+<span style="color:#75715e">## fit</span>
+res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>power_regr,
+    jac<span style="color:#f92672">=</span>power_regr_jac,
+    xdata<span style="color:#f92672">=</span>species_df<span style="color:#f92672">.</span>area,
+    ydata<span style="color:#f92672">=</span>species_df<span style="color:#f92672">.</span>numspecies,
+    p0<span style="color:#f92672">=</span>[<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">2</span>],  <span style="color:#75715e"># it starts at 0, power guess is 2 (quadratic behavior)</span>
+)
+a, b <span style="color:#f92672">=</span> res
+</code></pre></div><p>Here I&rsquo;m fitting a Power model to a dataset that has the number of plant species by sampling area of some experiment.</p>
+<ul>
+<li>area: total area of sampled space for measuring the plants</li>
+<li>numspecies: number of species found</li>
+</ul>
+
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_6.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<p>A useful property of the Power parameter is that you can bound it in the fit depending on the growth behavior you&rsquo;re trying to model.</p>
+<ul>
+<li>$0 &lt; b &lt; 1$: Convex shape, $Y$ increases as $X$ increases.</li>
+<li>$b &lt; 0$: Concave shape, $Y$ decreases as $X$ increases.</li>
+<li>$b &gt; 1$: Concave shape, $Y$ increases as $X$ increases.</li>
+</ul>
+<p>Here are some examples:</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_7.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<h2 id="sygmoidal-curves">Sygmoidal Curves</h2>
+<p>Here are two main curves to test when you need to model events which have a sygmoidal shape.</p>
+<h3 id="logistic-curve">Logistic Curve</h3>
+<p>The logistic curve should be familiar to any data scientist. It&rsquo;s derived from the cumulative logistic distribution function and is symmetric around a inflection point.</p>
+<p><strong>General parameterisation:</strong></p>
+<p>$$Y = a + \frac{c - a}{1 + e^{b(X - d)}}$$</p>
+<p><strong>Parameters interpretation:</strong></p>
+<ul>
+<li>$c$ is the upper asymptote</li>
+<li>$a$ is the lower asymptote</li>
+<li>$d$ controls the location of the inflection point (relative to X)</li>
+<li>$b$ the slope around the inflection point, and we can use it to control the &lsquo;growth&rsquo; behavior. If $b &lt; 0$, then $Y$ increases as $X$ increases and if $b &gt; 0$ then $Y$ decreases as $X$ increases.</li>
+</ul>
+<hr>
+<p>This parameterisation above is general, but depending on what you&rsquo;re trying to fit it can be reduced. For example, if we se $a = 0$ we have a simpler equation. We could also force $c = 1$ furthermore, making the equation even simpler. It all depends on the constraints of your problem.</p>
+
+<iframe src="https://www.desmos.com/calculator/dwgccpytn4" width="100%" style="min-height:500px"></iframe>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logistic_curve</span>(x, a, b, c, d):
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> (c <span style="color:#f92672">-</span> a) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (x <span style="color:#f92672">-</span> d)))
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logistic_curve_jac</span>(x, a, b, c, d):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array(
+        [
+            <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> (np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)),
+            ((<span style="color:#f92672">-</span>a <span style="color:#f92672">+</span> c) <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x)))
+            <span style="color:#f92672">/</span> (np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>,
+            (<span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> (np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>),
+            (b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>a <span style="color:#f92672">+</span> c) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x))) <span style="color:#f92672">/</span> (np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x)) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>,
+        ]
+    )<span style="color:#f92672">.</span>T
+
+
+<span style="color:#75715e">## fit</span>
+res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>logistic_curve,
+    jac<span style="color:#f92672">=</span>logistic_curve_jac,
+    xdata<span style="color:#f92672">=</span>beetgrowth_df<span style="color:#f92672">.</span>dae,
+    ydata<span style="color:#f92672">=</span>beetgrowth_df<span style="color:#f92672">.</span>weightfree,
+    p0<span style="color:#f92672">=</span>[
+        <span style="color:#ae81ff">0</span>,
+        <span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>,
+        <span style="color:#ae81ff">50</span>,
+        <span style="color:#ae81ff">30</span>,
+    ],  <span style="color:#75715e"># lower asymptote guess is 0, b is negative (Y increases with X), upper asymptote guess is 50 and inflection point guess is at 30 dae</span>
+    bounds<span style="color:#f92672">=</span>([<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf, <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf, <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf], [<span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">0</span>, np<span style="color:#f92672">.</span>inf, np<span style="color:#f92672">.</span>inf]),
+    maxfev<span style="color:#f92672">=</span><span style="color:#ae81ff">3000</span>,
+)
+a, b, c, d <span style="color:#f92672">=</span> res
+</code></pre></div><p>In this example we fit a Logistic Curve to model Plant Growth, in this case Sugar Beet. The variables are:</p>
+<ul>
+<li>dae: days after plant emergence</li>
+<li>weightfree: Weight measurements (grams per square meter of dry matter)</li>
+</ul>
+<p>The dataset was published in this paper: Scott, R. K., Wilcockson, S. J., &amp; Moisey, F. R. (1979). The effects of time of weed removal on growth and yield of sugar beet.
+
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_8.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+</p>
+<h3 id="gompertz-function">Gompertz Function</h3>
+<p>Or more specifically, the <a href="https://en.wikipedia.org/wiki/Gompertz_function">Gompertz Curve</a>. Not always the problem we&rsquo;re modelling is symmetric, and the Gompertz function can model different &ldquo;growth speeds&rdquo; around the inflection point. I suggest you take a look at the Wikipedia page for this function, here are some examples of where it can be used:</p>
+<ul>
+<li>Mobile phone uptake, where costs were initially high (so uptake was slow), followed by a period of rapid growth, followed by a slowing of uptake as saturation was reached</li>
+<li>Population in a confined space, as birth rates first increase and then slow as resource limits are reached</li>
+<li>Modelling of growth of tumors</li>
+<li>Modelling market impact in finance and aggregated subnational loans dynamic.</li>
+</ul>
+<p><strong>General parameterisation:</strong></p>
+<p>$$Y = a + (c - a)\cdot e^{-e^{b(X - d)}}$$</p>
+<p>The parameters have similar interpretation as in the Logistic Curve.</p>
+<p><strong>Parameters interpretation:</strong></p>
+<ul>
+<li>$c$ is the upper asymptote</li>
+<li>$a$ is the lower asymptote</li>
+<li>$d$ controls the location of the inflection point</li>
+<li>$b$ the slope around the inflection point, and we can use it to control the &lsquo;growth&rsquo; behavior. If $b &lt; 0$, then $Y$ increases as $X$ increases and if $b &gt; 0$ then $Y$ decreases as $X$ increases.</li>
+</ul>
+
+<iframe src="https://www.desmos.com/calculator/qqk2fxw6e6" width="100%" style="min-height:500px"></iframe>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gompertz_function</span>(x, a, b, c, d):
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> (c <span style="color:#f92672">-</span> a) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (x <span style="color:#f92672">-</span> d)))
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gompertz_function_jac</span>(x, a, b, c, d):
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array(
+        [
+            <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x))),
+            <span style="color:#f92672">-</span>(<span style="color:#f92672">-</span>a <span style="color:#f92672">+</span> c) <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x)) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x))),
+            np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x))),
+            b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>a <span style="color:#f92672">+</span> c) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(b <span style="color:#f92672">*</span> (<span style="color:#f92672">-</span>d <span style="color:#f92672">+</span> x)))),
+        ]
+    )<span style="color:#f92672">.</span>T
+
+
+<span style="color:#75715e">## fit</span>
+res, pcov <span style="color:#f92672">=</span> curve_fit(
+    f<span style="color:#f92672">=</span>gompertz_function,
+    jac<span style="color:#f92672">=</span>gompertz_function_jac,
+    xdata<span style="color:#f92672">=</span>beetgrowth_df<span style="color:#f92672">.</span>dae,
+    ydata<span style="color:#f92672">=</span>beetgrowth_df<span style="color:#f92672">.</span>weightfree,
+    p0<span style="color:#f92672">=</span>[
+        <span style="color:#ae81ff">0</span>,
+        <span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>,
+        <span style="color:#ae81ff">50</span>,
+        <span style="color:#ae81ff">30</span>,
+    ],  <span style="color:#75715e"># lower asymptote guess is 0, b is negative (Y increases with X), upper asymptote guess is 50 and inflection point guess is at 30 dae</span>
+    bounds<span style="color:#f92672">=</span>([<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf, <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf, <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>inf], [<span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">0</span>, np<span style="color:#f92672">.</span>inf, np<span style="color:#f92672">.</span>inf]),
+    maxfev<span style="color:#f92672">=</span><span style="color:#ae81ff">3000</span>,
+)
+a, b, c, d <span style="color:#f92672">=</span> res
+</code></pre></div>
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_9.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<p>The Gompertz Curve has an alternative parameterisation that inverts the growth pattern from the general one:</p>
+<p>$$Y = a + (c - a)\cdot \left[1 - e^{-e^{-b(X - d)}}\right]$$</p>
+<p>I won&rsquo;t fit anything to it as it&rsquo;s quite similar to the previous one.</p>
+
+<iframe src="https://www.desmos.com/calculator/v2veqco7um" width="100%" style="min-height:500px"></iframe>
+
+<p>Here is an example to better visualize the difference between the sygmoidal curves. The parameters here are:
+<code>a=2, b=-0.5, c=10, d=7</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_gompertz_function</span>(x, a, b, c, d):
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> (c <span style="color:#f92672">-</span> a) <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>b <span style="color:#f92672">*</span> (x <span style="color:#f92672">-</span> d))))
+
+
+a, b, c, d <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>
+</code></pre></div>
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_10.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<h2 id="conclusion--code">Conclusion + Code</h2>
+<p>I hope these snippets and code examples will prove useful to you (and to my future self). There are a lot of other nonlinear models that I didn&rsquo;t include, some of them are:</p>
+<ul>
+<li>Michaelis-Menten equation</li>
+<li>Yield-loss/density curve</li>
+<li>Log-logistic curve</li>
+<li>Weibull curve</li>
+</ul>
+<p>As mentioned earlier, this article was based on <a href="https://www.statforbiology.com/nonlinearregression/usefulequations#introduction">another article</a> which include more details about the equations above, albeit all the fitting code is in R. Some of the datasets I used were also taken from the <code>aomisc</code> package in R.</p>
+<p>Finally, you can find all the code + datasets  here in my <a href="https://github.com/robotenique/non-linear-models">Github repo</a>.</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/sleep-2020/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Sleep - 2020</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-188016442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

@@ -6,10 +6,20 @@
     <description>Recent content in python on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Useful Nonlinear Models in Python</title>
+      <link>https://robotenique.github.io/posts/nonlinear-models/</link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/nonlinear-models/</guid>
+      <description>Context  Linear x Nonlinear Fitting curves in Python Initial Guessing and the Jacobian   Convex/Concave Models  Exponential Decay Exponential decay with lower asymptote Asymptotic Model (Negative Exponential) Asymptotic Model (constrained: starting from 0) Power Regression   Sygmoidal Curves  Logistic Curve Gompertz Function   Conclusion + Code    Context  All models are wrong, but some are useful
+ In statistics, we say that a regression is linear when it&amp;rsquo;s linear in the parameters.</description>
+    </item>
     
     <item>
       <title>Generating grid/image points in Python</title>

@@ -4,31 +4,51 @@
   
   <url>
     <loc>https://robotenique.github.io/categories/</loc>
-    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://robotenique.github.io/tags/data-science/</loc>
-    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://robotenique.github.io/posts/</loc>
-    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://robotenique.github.io/posts/sleep-2020/</loc>
-    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <loc>https://robotenique.github.io/tags/programming/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://robotenique.github.io/categories/python/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://robotenique.github.io/tags/python/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://robotenique.github.io/categories/statistics/</loc>
-    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://robotenique.github.io/tags/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://robotenique.github.io/posts/nonlinear-models/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://robotenique.github.io/posts/sleep-2020/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,11 +59,6 @@
   
   <url>
     <loc>https://robotenique.github.io/posts/gbm-histogram/</loc>
-    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://robotenique.github.io/tags/programming/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -144,16 +159,6 @@
   
   <url>
     <loc>https://robotenique.github.io/posts/2017-09-17-image-grid-python/</loc>
-    <lastmod>2017-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://robotenique.github.io/categories/python/</loc>
-    <lastmod>2017-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://robotenique.github.io/tags/python/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
   </url>
   
