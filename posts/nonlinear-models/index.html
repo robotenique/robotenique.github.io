@@ -295,6 +295,17 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>All models are wrong, but some are useful</p>
 </blockquote>
 <p>In statistics, we say that a regression is linear when it&rsquo;s linear in the parameters. Fitting linear models is an easy task, we can use the least squares method and obtain the optimal parameters for our model. In Python you can achieve this using a bunch of libraries like <code>scipy</code>, <code>scikit-learn</code>, <code>numpy</code>, <code>statsmodels</code>, etc. However, not all problems can be solved with pure linear models. There are a lot of useful nonlinear models that guarantee useful mathematical properties and are also highly interpretable. Since I tend to recurrently fit these models, t article will serve as a future reference for myself whenever I need to use them in the future, with easy to implement code (in Python).</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/nonlinear_title.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
 <p>Now, before we get into the models, it&rsquo;s important to note the context about <strong>why</strong> and <strong>when</strong> would you use these types of models. They&rsquo;re not necessarily a substitute for your complex (XGBoost, LightGBM, Random Forest, Neural Network, etc.) machine learning model. It&rsquo;s best to think about these nonlinear models in the context of <strong>curve fitting</strong>, i.e. you want to model a phenomena using a curve that you can interpret later. So, here are some considerations as to why would you use them:</p>
 <ul>
 <li>
