@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+ 
+  MathJax.Hub.Config({
+      CommonHTML: {
+        linebreaks: {automatic: true}
+      },
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }  
+});
+ 
+</script>
+
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.68.3" />
+
+    
+    
+    
+
+<title>Tools for a more mindful Internet and Social Media experience • Juliano Garcia</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tools for a more mindful Internet and Social Media experience"/>
+<meta name="twitter:description" content="Intro What are the core values of how you use the internet?  Minimizing enshittification Minimizing signal-to-noise ratio   Vivaldi Browser Extensions  General Productivity related Social Media related   (extra) Mobile tools    Intro This quick blogpost wil be mostly a categorization for myself about some general tools I use to make social media and internet browsing more useful and a generally better experience (for me at least)."/>
+
+<meta property="og:title" content="Tools for a more mindful Internet and Social Media experience" />
+<meta property="og:description" content="Intro What are the core values of how you use the internet?  Minimizing enshittification Minimizing signal-to-noise ratio   Vivaldi Browser Extensions  General Productivity related Social Media related   (extra) Mobile tools    Intro This quick blogpost wil be mostly a categorization for myself about some general tools I use to make social media and internet browsing more useful and a generally better experience (for me at least)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://robotenique.github.io/posts/internet-mindful-tools/" />
+<meta property="article:published_time" content="2024-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-06-10T00:00:00+00:00" /><meta property="og:site_name" content="Robotenique&#39;s Home" />
+
+<meta property="og:image" content="https://robotenique.github.io/img/avatar_simple_title.jpg">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:image:width" content="500">
+<meta property="og:image:height" content="500">
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.154a70bed4ff459a43893fd61cfd6162bf3d46e9263c5f7c228430af7de60eb7.css" integrity="sha256-FUpwvtT/RZpDiT/WHP1hYr89RukmPF98IoQwr33mDrc=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-08 layout-reverse">
+    
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://robotenique.github.io/">
+        
+          Juliano Garcia
+        
+        </a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://robotenique.github.io/img/me.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Data &amp; Computer Scientist. Digressions about statistics, technology or anything else that comes in my mind. Opinions are my own. 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Juliano Garcia</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	
+	<a href="https://github.com/robotenique" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/juliano-garcia-oliveira" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:julianogarcia_1997@hotmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Tools for a more mindful Internet and Social Media experience</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 10, 2024
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/computer-science">COMPUTER SCIENCE</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/misc">MISC</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/programming">programming</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 8 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <div class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#what-are-the-core-values-of-how-you-use-the-internet">What are the core values of how you use the internet?</a>
+      <ul>
+        <li><a href="#minimizing-enshittification">Minimizing enshittification</a></li>
+        <li><a href="#minimizing-signal-to-noise-ratio">Minimizing signal-to-noise ratio</a></li>
+      </ul>
+    </li>
+    <li><a href="#vivaldi-browser">Vivaldi Browser</a></li>
+    <li><a href="#extensions">Extensions</a>
+      <ul>
+        <li><a href="#general">General</a></li>
+        <li><a href="#productivity-related">Productivity related</a></li>
+        <li><a href="#social-media-related">Social Media related</a></li>
+      </ul>
+    </li>
+    <li><a href="#extra-mobile-tools">(extra) Mobile tools</a></li>
+  </ul>
+</nav>
+</div>
+<h2 id="intro">Intro</h2>
+<p>This quick blogpost wil be mostly a categorization for myself about some general tools I use to make social media and internet browsing more useful and a generally better experience (for me at least). I&rsquo;ve been programming for more than 12 years (at the time of this blogpost), and working within the technology industry for more than 5 years. I&rsquo;ve seen a lot of tools and I&rsquo;ve tried a lot of them, but these are the ones that I&rsquo;ve been using for a while and that I think are worth mentioning.</p>
+<p>Just a caveat: I&rsquo;m not affiliated with any of these tools, I&rsquo;m just a user that found them useful. I&rsquo;m also not a &ldquo;productivity coach&rdquo; or anything like that, so I don&rsquo;t go on a constant search for new tools. I just use what I find useful and that&rsquo;s it.</p>
+<blockquote>
+<p><strong>Important</strong>: The most important thing is not actually the tools, but how you actually browse the internet and use social media. I won&rsquo;t explain this here, but you can find useful resources about how I generally approach it based on the books <a href="https://www.amazon.com/Digital-Minimalism-Choosing-Focused-Noisy/dp/0525536515">Digital Minimalism</a> by Cal Newport and <a href="https://www.amazon.com/Stolen-Focus/dp/1526620227">Stolen Focus</a> by Johann Hari. I mostly shaped my approach based on these books and my experience over the years.</p>
+</blockquote>
+<h2 id="what-are-the-core-values-of-how-you-use-the-internet">What are the core values of how you use the internet?</h2>
+<p>Before I start, I think it&rsquo;s important to understand what are the core values you want to have when using the internet - these will vary from person to person, it doesn&rsquo;t matter the specifics, but the most important thing is actually thinking about it. Most people will just use the internet without thinking about it, or just start using something new without actually giving a thought about how it serves them.</p>
+<h3 id="minimizing-enshittification">Minimizing enshittification</h3>
+<p>A general phenomenon within internet usage, <a href="https://en.wikipedia.org/wiki/Enshittification">enshittification</a> is the process of a product becoming worse over time. This is being constantly applied to social media platforms, but it&rsquo;s not exclusive to them. In the age of LLMs, where automatically generated content is becoming more and more common, I feel I have to constantly be &ldquo;fighting back&rdquo; against this process.</p>
+<p>I&rsquo;m not naive enough to believe that using a certain toolbox will make us immune to this process - falling into the trap of delegating a societal problem to personal, individual solutions is a common practice of neoliberalism. However, I think that by being mindful about the tools we use, we can at least minimize the impact of enshittification on our lives.</p>
+<h3 id="minimizing-signal-to-noise-ratio">Minimizing signal-to-noise ratio</h3>
+<p>In the beginning of my student years I tried to maximize the content I consumed - I followed a considerable number of newsletters, podcasts, followed a lot of people (from my area but also a lot of other stuff) on social media, engaged in a lot of forums, etc. For a time this can be useful, especially to getting to know core concepts, understanding different ideas, i.e. it&rsquo;s very good for exploring the whole &ldquo;knowledge space&rdquo; of a certain area/interest.</p>
+<p>However, as I got into more specific areas of interest, I felt the need to really trim down the content I was consuming. I started to unfollow people, unsubscribe from newsletters, etc. I started to think about the signal-to-noise ratio of the content I was consuming. I want to maximize the signal (the useful content) and minimize the noise (the content that doesn&rsquo;t add value to me).</p>
+<p>From time to time I do a &ldquo;content curation session&rdquo; - I go through my social media, newsletters, etc, and see if the content is still useful to me. If it&rsquo;s not, I unsubscribe, unfollow, etc. This generally works by:</p>
+<ul>
+<li>Unfollowing/muting content that doesn&rsquo;t add value to me</li>
+<li>Specifically trimming down the content I consume to the most useful/trusted sources</li>
+<li>Algorithmic curation: For certain social media, try to &ldquo;train&rdquo; the algorithm by giving explicit feedback on the content you want to see</li>
+<li>Use tools to minimize the noise (I&rsquo;ll talk about them below)</li>
+</ul>
+<blockquote>
+<p>Time is a (very) limited resource, so one of my core values <strong>now</strong> is to minimize the noise and maximize the signal of the content I consume. This drives how I mostly approach the tools I use, if I actually use them or not, and most importantly, <strong>how</strong> I use them.</p>
+</blockquote>
+<h2 id="vivaldi-browser">Vivaldi Browser</h2>
+<p>My main browser, now for several years. I&rsquo;ve used Chrome, Firefox, Opera, Safari, etc, but Vivaldi is the one that I&rsquo;ve been using for a while now. It&rsquo;s a Chromium-based browser, so it&rsquo;s very fast, but it has a lot of features that I find useful:</p>
+<ul>
+<li>Tab Stacks: I can group tabs together, which is very useful for when I&rsquo;m working on a project and I need to have a lot of tabs open</li>
+<li>Tab Tiling: I can tile tabs, which is useful for when I&rsquo;m working on a project and I need to see two tabs at the same time</li>
+<li>Chromium-based browser enables me to use Chrome extensions, which is very useful</li>
+<li>Customizable: I can change the theme, the layout, etc. I especially use this to minimize the noise of the browser itself - I use a dark theme, I hide the bookmarks bar, etc.</li>
+<li>Workspace: I can create different workspaces, which can be used to separate different scopes of work.</li>
+<li>Command Palette: I can search for tabs, settings, etc, using a command palette. Once you get used to it and its shortcuts it makes the browsing experience much faster.</li>
+</ul>
+<p>A lot of stuff you see on newer and trendy browsers (e.g. Arc) are actually built-in features that always were present on Vivaldi. Here&rsquo;s an example of my current interface (here on Windows 10):</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/vivaldi.png"
+    alt="Good"
+    decoding="async"
+  />
+</p>
+
+<p>The interface is very clean - I use a simple dark theme, I don&rsquo;t have a bookmarks bar, I use the tab stacks feature to stack related tabs together. I specifically removed some features that I don&rsquo;t use, like the status bar, icons for features I rarely use (or when used is through the command palette, not clicking in it), and I specifically removed most extensions and only keep on the interface the ones that actually I constantly will have to interact with.</p>
+<h2 id="extensions">Extensions</h2>
+<p>To really take advantage of the browser, I use some extensions that I find really useful. I try to keep them in a small number to not slow down the browser. Here&rsquo;s the current list of extensions I use:</p>
+<h3 id="general">General</h3>
+<ul>
+<li>
+<p><strong>uBlock Origin</strong>: The best adblocker out there. A must-have extension in today&rsquo;s internet, without it the browsing experience is just unbearable.</p>
+</li>
+<li>
+<p><strong>Vimium</strong>: Navigate the browser using Vim-like shortcuts. It&rsquo;s very useful to navigate the browser without using the mouse. (No, I don&rsquo;t use Vim, but I like the shortcuts).</p>
+</li>
+<li>
+<p><strong>Dark Reader</strong>: Dark mode for every website&hellip; I can&rsquo;t live without it anymore.</p>
+</li>
+<li>
+<p><strong>Momentum</strong>: A new tab page that shows a beautiful picture, a quote, and a to-do list. I mainly use this because I&rsquo;m not a fan of speed dials&hellip;</p>
+</li>
+<li>
+<p><strong>AutoplayStopper</strong>: Stops autoplay on websites. There&rsquo;s few things more annoying than autoplay videos, this extension stops them.</p>
+</li>
+<li>
+<p><strong>I still don&rsquo;t care about cookies</strong>: Removes cookie warnings from (most) websites</p>
+</li>
+</ul>
+<h3 id="productivity-related">Productivity related</h3>
+<ul>
+<li>
+<p><strong>Strict Workflow</strong>: A Pomodoro timer that blocks websites that you define as distracting.</p>
+</li>
+<li>
+<p><strong>TimeYourWeb Time Tracker</strong>: I use this extension to track the time I spend on websites. Mostly for personal analytics.</p>
+</li>
+<li>
+<p><strong>RescueTime</strong>: Also used for time tracking, but this one is more general</p>
+</li>
+</ul>
+<h3 id="social-media-related">Social Media related</h3>
+<ul>
+<li>
+<p><strong>Video Speed Controller</strong>: Control video speed on any website. I use this a lot on Youtube, but also on other websites that have video content.</p>
+</li>
+<li>
+<p><strong>SponsorBlock</strong>: Skip sponsored segments in Youtube videos.</p>
+</li>
+<li>
+<p><strong>Hide youtube shorts</strong>: Hides Youtube shorts from the homepage. I don&rsquo;t like them, so I just hide them.</p>
+</li>
+<li>
+<p><strong>Reddit Enhancement Suite</strong>: Enhances the Reddit experience. I use it to filter out subreddits, users, etc.</p>
+</li>
+<li>
+<p><strong>Fluff Busting Purity</strong>: Removes a lot of the noise from Facebook. Allows to remove a lot of stuff from the feed, like sponsored content, meaningless posts/updates, useless sections, etc.</p>
+</li>
+<li>
+<p><strong>Control Panel for Twitter</strong>: Similar to Fluft Busting Purity, but for Twitter. Allows to remove a lot of useless stuff from the feed, keeping the experience focused on the content I want to see.</p>
+</li>
+</ul>
+<h2 id="extra-mobile-tools">(extra) Mobile tools</h2>
+<p>On my phone I barely use social media - however, I do use some tools to make the experience better. Here&rsquo;s a quick rundown of the tools I use:</p>
+<ul>
+<li>
+<p><strong>Firefox Browser</strong>: I use Firefox on the phone as it has ad blocking built-in, and I can easily add extensions. I know there&rsquo;s some better and more configurable browsers out there, but I&rsquo;m used to Firefox and it works well for me.</p>
+</li>
+<li>
+<p><strong>Aeroinsta</strong>: An Instagram client that doesn&rsquo;t show ads, doesn&rsquo;t track you, etc. It&rsquo;s a very simple client, but it works well for me. There&rsquo;s some advanced features that I use like removing specific sections of the app, such as suggested posts and removing reels.</p>
+</li>
+<li>
+<p><strong>Youtube revanced</strong>: Must-have Youtube client. It has a lot of features that the official app doesn&rsquo;t have, like background playback, ad blocking, etc.</p>
+</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/nonlinear-models/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Useful Nonlinear Models in Python</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-188016442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>

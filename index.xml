@@ -6,10 +6,29 @@
     <description>Recent content on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tools for a more mindful Internet and Social Media experience</title>
+      <link>https://robotenique.github.io/posts/internet-mindful-tools/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/internet-mindful-tools/</guid>
+      <description>Intro What are the core values of how you use the internet?  Minimizing enshittification Minimizing signal-to-noise ratio   Vivaldi Browser Extensions  General Productivity related Social Media related   (extra) Mobile tools    Intro This quick blogpost wil be mostly a categorization for myself about some general tools I use to make social media and internet browsing more useful and a generally better experience (for me at least).</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://robotenique.github.io/about/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/about/</guid>
+      <description>Hi, I am Juliano Garcia, a Computer Scientist from IME-USP at the University of São Paulo, and this is my personal blog. In 2019 I graduated in Computer Science with an specialization in Artificial Intelligence, focusing my studies in statistics, algorithms, machine learning and related areas in AI such as game theory, classical planning, knowledge-based systems, etc.
+I currently work as a Data Scientist using state-of-the-art data science to empower people in their finantial lives at Nubank&amp;rsquo;s Credit/Lending team, in São Paulo/Brazil.</description>
+    </item>
     
     <item>
       <title>Useful Nonlinear Models in Python</title>
@@ -85,16 +104,6 @@ Reccomender Systems In a world where digital information is increasing every yea
       
       <guid>https://robotenique.github.io/posts/fortune-cat-simulation/</guid>
       <description>Last year I found out about a Gacha game called Saint Seiya Awakening, which I&amp;rsquo;ve tried to play for some time, but then gave up on it. However I still do watch people play it, people who usually have enough time to invest in the game (it demands quite an amount of your time to be at a competitive level). Gacha games are usually free-to-play, but it is full of loot boxes, roulettes, slot machines, microtransactions and everything else that makes the player want to buy stuff in-game.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://robotenique.github.io/about/</link>
-      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/about/</guid>
-      <description>Hi, I am Juliano Garcia, a Computer Scientist from IME-USP at the University of São Paulo, and this is my personal blog. In 2019 I graduated in Computer Science with an specialization in Artificial Intelligence, focusing my studies in statistics, algorithms, machine learning and related areas in AI such as game theory, classical planning, knowledge-based systems, etc.
-I currently work as a Data Scientist using state-of-the-art data science to empower people in their finantial lives at Nubank&amp;rsquo;s Credit team, in São Paulo/Brazil.</description>
     </item>
     
     <item>

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 20 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tools for a more mindful Internet and Social Media experience</title>
+      <link>https://robotenique.github.io/posts/internet-mindful-tools/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/internet-mindful-tools/</guid>
+      <description>Intro What are the core values of how you use the internet?  Minimizing enshittification Minimizing signal-to-noise ratio   Vivaldi Browser Extensions  General Productivity related Social Media related   (extra) Mobile tools    Intro This quick blogpost wil be mostly a categorization for myself about some general tools I use to make social media and internet browsing more useful and a generally better experience (for me at least).</description>
+    </item>
     
     <item>
       <title>Useful Nonlinear Models in Python</title>

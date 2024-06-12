@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 20 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computer Science</title>
+      <link>https://robotenique.github.io/categories/computer-science/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/categories/computer-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Misc</title>
+      <link>https://robotenique.github.io/categories/misc/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/categories/misc/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python</title>
@@ -30,29 +48,11 @@
     </item>
     
     <item>
-      <title>Computer Science</title>
-      <link>https://robotenique.github.io/categories/computer-science/</link>
-      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/categories/computer-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Art</title>
       <link>https://robotenique.github.io/categories/art/</link>
       <pubDate>Mon, 13 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://robotenique.github.io/categories/art/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Misc</title>
-      <link>https://robotenique.github.io/categories/misc/</link>
-      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://robotenique.github.io/categories/misc/</guid>
       <description></description>
     </item>
     
