@@ -6,10 +6,19 @@
     <description>Recent content in Computer Science on Juliano Garcia</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2025 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://robotenique.github.io/categories/computer-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>From Classification to Chaos</title>
+      <link>https://robotenique.github.io/posts/from-classification-to-chaos/</link>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://robotenique.github.io/posts/from-classification-to-chaos/</guid>
+      <description>Logistic Regression Logistic Differential Equation Logistic Map Bifurcation Diagram Chaos in Complex Space The Derivation The Mandelbrot Set Conclusion    Mathematics has an interesting property of connecting different fields through relatively simple transformations. Starting from logistic regression, I&amp;rsquo;ll explore what happens when we apply basic mathematical operations like discretization and complex plane extensions to its underlying function. By following these transformations, we end up visiting concepts from dynamical systems, chaos theory, and fractals - fields that might seem distant from the classification algorithms that we data scientists know so well.</description>
+    </item>
     
     <item>
       <title>Tools for a more mindful Internet and Social Media experience</title>

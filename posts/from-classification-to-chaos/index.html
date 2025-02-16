@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+ 
+  MathJax.Hub.Config({
+      CommonHTML: {
+        linebreaks: {automatic: true}
+      },
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }  
+});
+ 
+</script>
+
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.68.3" />
+
+    
+    
+    
+
+<title>From Classification to Chaos • Juliano Garcia</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="From Classification to Chaos"/>
+<meta name="twitter:description" content="Logistic Regression Logistic Differential Equation Logistic Map Bifurcation Diagram Chaos in Complex Space The Derivation The Mandelbrot Set Conclusion    Mathematics has an interesting property of connecting different fields through relatively simple transformations. Starting from logistic regression, I&rsquo;ll explore what happens when we apply basic mathematical operations like discretization and complex plane extensions to its underlying function. By following these transformations, we end up visiting concepts from dynamical systems, chaos theory, and fractals - fields that might seem distant from the classification algorithms that we data scientists know so well."/>
+
+<meta property="og:title" content="From Classification to Chaos" />
+<meta property="og:description" content="Logistic Regression Logistic Differential Equation Logistic Map Bifurcation Diagram Chaos in Complex Space The Derivation The Mandelbrot Set Conclusion    Mathematics has an interesting property of connecting different fields through relatively simple transformations. Starting from logistic regression, I&rsquo;ll explore what happens when we apply basic mathematical operations like discretization and complex plane extensions to its underlying function. By following these transformations, we end up visiting concepts from dynamical systems, chaos theory, and fractals - fields that might seem distant from the classification algorithms that we data scientists know so well." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://robotenique.github.io/posts/from-classification-to-chaos/" />
+<meta property="article:published_time" content="2025-01-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-01-19T00:00:00+00:00" /><meta property="og:site_name" content="Robotenique&#39;s Home" />
+
+<meta property="og:image" content="https://robotenique.github.io/img/avatar_simple_title.jpg">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:image:width" content="500">
+<meta property="og:image:height" content="500">
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.154a70bed4ff459a43893fd61cfd6162bf3d46e9263c5f7c228430af7de60eb7.css" integrity="sha256-FUpwvtT/RZpDiT/WHP1hYr89RukmPF98IoQwr33mDrc=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-08 layout-reverse">
+    
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://robotenique.github.io/">
+        
+          Juliano Garcia
+        
+        </a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://robotenique.github.io/img/me.jpg" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Data &amp; Computer Scientist. Digressions about statistics, technology or anything else that comes in my mind. Opinions are my own. 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Juliano Garcia</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>Projects</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About Me</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	
+	<a href="https://github.com/robotenique" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/juliano-garcia-oliveira" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:julianogarcia_1997@hotmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>From Classification to Chaos</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jan 19, 2025
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/art">ART</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/computer-science">COMPUTER SCIENCE</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/misc">MISC</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/art">art</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/programming">programming</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 8 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <div class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#logistic-regression">Logistic Regression</a></li>
+    <li><a href="#logistic-differential-equation">Logistic Differential Equation</a></li>
+    <li><a href="#logistic-map">Logistic Map</a></li>
+    <li><a href="#bifurcation-diagram">Bifurcation Diagram</a></li>
+    <li><a href="#chaos-in-complex-space">Chaos in Complex Space</a></li>
+    <li><a href="#the-derivation">The Derivation</a></li>
+    <li><a href="#the-mandelbrot-set">The Mandelbrot Set</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+<p>Mathematics has an interesting property of connecting different fields through relatively simple transformations. Starting from logistic regression, I&rsquo;ll explore what happens when we apply basic mathematical operations like discretization and complex plane extensions to its underlying function. By following these transformations, we end up visiting concepts from dynamical systems, chaos theory, and fractals - fields that might seem distant from the classification algorithms that we data scientists know so well.</p>
+<h2 id="logistic-regression">Logistic Regression</h2>
+<p>Let&rsquo;s begin with a recap of logistic regression, a traditional model widely used in classification problems across various fields. It begins with our attempt at modeling the probability of a binary event - we do so using a log-odds ratio that maps the probability to the real line and estimate this log-odds through a linear model. The logistic regression model is defined as:</p>
+<p>$$\log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_nx_n$$</p>
+<p>Where $p$ is the probability of the event, $x_i$ are the features, and $\beta_i$ are the coefficients of the model. The left side of the equation is the log-odds ratio, and the right side is the linear model. This can be expressed as:</p>
+<p>$$\log\left(\frac{p}{1-p}\right) = \beta^T x$$</p>
+<p>Where $\beta$ is the vector of coefficients and $x$ is the vector of features. If we solve for $p$ we get the logistic function (I won&rsquo;t derive it here, there&rsquo;s plenty of Medium posts already doing that):</p>
+<p>$$
+p = \frac{1}{1 + e^{-\beta^T x}}
+$$</p>
+<p>If we abstract away the coefficients and features, we have:</p>
+<p>$$
+f(x) = \frac{1}{1 + e^{-x}}
+$$</p>
+<p>This is the <em>sigmoid</em> function we all know and love =). It maps the real line to the interval $[0, 1]$, it&rsquo;s continuous and it&rsquo;s differentiable. The sigmoid function is also known as the <strong>logistic function</strong> - this comes from the fact that it&rsquo;s also the solution of the logistic differential equation.</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/sigmoid.png"
+    alt="Sigmoid Function"
+    decoding="async"
+  />
+</p>
+
+<h2 id="logistic-differential-equation">Logistic Differential Equation</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Logistic_function#Logistic_differential_equation">Logistic Differential Equation</a> models population growth through a simple first-order differential equation. It&rsquo;s defined as:</p>
+<p>$$
+\frac{d}{dx}f(x) = r f(x) (1 - f(x))
+$$</p>
+<p>Where $f(x)$ is the population at time $x$ and $r$ is the growth rate. It is a simple model - population growth is proportional to current size ($rf(x)$) but it&rsquo;s limited by available resources ($1 - f(x)$). Given the initial condition f(0) = 1/2, the solution of this differential equation is the logistic function.</p>
+<p>This basically tells us that, if we get the <em>sigmoid</em> and take its derivative at a given point, the rate of change at that point is proportional to both the current value ($f(x)$) and the remaining value to reach 1 ($1 - f(x)$). This basically gives the typical S-shaped curve, with maximum growth at the middle point and decreasing growth as we reach the limits (both towards 1 and towards 0).</p>
+<p>While this differential equation is defined on the real line, we can traverse the mathematical landscape to define the same behavior using discrete rather than continuous values. This brings us to the logistic map&hellip;</p>
+<h2 id="logistic-map">Logistic Map</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Logistic_map">Logistic Map</a> is another model focused on describing population growth and is the discrete version of the logistic differential equation. It describes the population at time $t+1$ as a function of the population at time $t$ and is defined as:</p>
+<p>$$
+v_{t+1} = r v_t (1 - v_t)
+$$</p>
+<p>where $v_t$ is the population at time $t$ and $r$ is the growth rate. Unlike the logistic differential equation, this is a discrete model - we&rsquo;re dealing with distinct time steps rather than continuous time. For a fixed $r$, plotting $v_{t + 1}$ versus $v_t$ yields a simple parabola:</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/chaos_0.png"
+    alt="chaos_0"
+    decoding="async"
+  />
+</p>
+
+<p>Despite being intuitively a simpler model than a continuously-defined differential equation, it exhibits a very interesting behavior - it is chaotic! The logistic map simulation is straightforward: we set a starting value $v_0$, a growth rate $r$, and iterate the equation. The chart below demonstrates the behavior when starting at $v_0 = 0.5$ and performing 100 iterations for different values of $r$:</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/chaos_1.png"
+    alt="chaos_1"
+    decoding="async"
+  />
+</p>
+
+<p>Just by looking at the chart we can see that the behavior is very different for different values of $r$. For $r = 1.5$ and $r = 2.5$ the population converges to a single value, for $r = 3.4$ the population oscillates between two values, and for $r = 3.9$ the population oscillates between four values. This is not a coincidence - the behavior of the logistic map has been widely studied within the realm of chaos theory and it&rsquo;s chaotic properties are well known!</p>
+<p>In fact, for a given value of $v_0$ and $r$ we can actually attribute a numeric value to the infinite sequence of values that the population will take, and can be measured through a concept called <a href="https://en.wikipedia.org/wiki/Lyapunov_exponent">Lyapunov exponent</a>. But, we can also visualize this chaotic behavior in a bifurcation diagram.</p>
+<h2 id="bifurcation-diagram">Bifurcation Diagram</h2>
+<p>The concept of the bifurcation diagram is elegantly simple: we plot different values of $r$ on the x-axis and the corresponding population values that emerge after many iterations on the y-axis. For each value of $r$, we apply the logistic map repeatedly and identify the values that the population converges to, oscillates between, or diverges to. The result is a fascinating chart that reveals the chaotic behavior of the logistic map, which I show alongside the Lyapunov exponent for each value of $r$:</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/chaos_2.png"
+    alt="chaos_2"
+    decoding="async"
+  />
+</p>
+
+<p>This is a famous visualization in mathematics - it reveals a fractal structure that is common in chaotic systems. The bifurcation diagram is a simple way to visualize the chaotic behavior of the logistic map, and it demonstrates how complex behavior can emerge from a simple model.</p>
+<p>Now, we went from the continuous differential equation to the discrete version and we witness the birth of chaos in the system. Now, let&rsquo;s take a step further and introduce chaos in a more complex space, but still using the same underlying principles.</p>
+<h2 id="chaos-in-complex-space">Chaos in Complex Space</h2>
+<p>Through scaling and substitutions operations - but preserving the core structure of the logistic map - we can transform the logistic map into a very interesting model. For reference, I&rsquo;ll add one of the possible derivations of this transformation below:</p>
+<p>Starting with the logistic map:</p>
+<p>$$
+\begin{equation}
+v_{t+1} = r v_t (1 - v_t)
+\end{equation}
+$$</p>
+<p>This equation contains a quadratic term $v_t^2$ and a linear term $v_t$ (as we saw in the parabola plotted earlier). The interesting dynamics emerge when these terms balance each other. We know from the sigmoid function that the maximum of $rv_t(1-v_t)$ occurs at $v_t = 1/2$.</p>
+<p>This suggests $v_t = 1/2$ as a natural center point for our dynamics. Let&rsquo;s introduce a change of variables centered around this point:</p>
+<p>$$v_t = \frac{z_t + 1}{2}$$</p>
+<p>This transformation means:</p>
+<ul>
+<li>When $z_t = -1$, $v_t = 0$</li>
+<li>When $z_t = 0$, $v_t = 1/2$ (center point)</li>
+<li>When $z_t = 1$, $v_t = 1$</li>
+</ul>
+<h2 id="the-derivation">The Derivation</h2>
+<p>Substituting the change of variables:</p>
+<p>$$\frac{z_{t+1} + 1}{2} = r(\frac{z_t + 1}{2})(1 - \frac{z_t + 1}{2})$$</p>
+<p>Simplify the right side:</p>
+<p>$$\frac{z_{t+1} + 1}{2} = r(\frac{z_t + 1}{2})(\frac{1}{2} - \frac{z_t}{2})$$
+$$\frac{z_{t+1} + 1}{2} = r(\frac{1}{4} - \frac{z_t^2}{4})$$</p>
+<p>Multiply both sides by 2:</p>
+<p>$$z_{t+1} + 1 = r(\frac{1}{2} - \frac{z_t^2}{2})$$</p>
+<p>Solve for $z_{t+1}$:</p>
+<p>$$z_{t+1} = -\frac{r}{2}z_t^2 + \frac{r}{2} - 1$$</p>
+<p>If we make a further substitution with $w_t = \sqrt{\frac{r}{2}}z_t$, thus $z_t = \sqrt{\frac{2}{r}}w_t$:</p>
+<p>$$\sqrt{\frac{2}{r}}w_{t+1} = -\frac{r}{2}(\sqrt{\frac{2}{r}}w_t)^2 + (\frac{r}{2} - 1)$$</p>
+<p>Simplify the right side:</p>
+<p>$$\sqrt{\frac{2}{r}}w_{t+1} = -\frac{r}{2}\frac{2}{r}w_t^2 + (\frac{r}{2} - 1)$$
+$$\sqrt{\frac{2}{r}}w_{t+1} = -w_t^2 + (\frac{r}{2} - 1)$$</p>
+<p>Multiply both sides by $\sqrt{\frac{r}{2}}$:</p>
+<p>$$w_{t+1} = -\sqrt{\frac{r}{2}}w_t^2 + \sqrt{\frac{r}{2}}(\frac{r}{2} - 1)$$</p>
+<p>we <strong>finally</strong> get to this final formulation:</p>
+<p>$$w_{t+1} = w_t^2 + c$$</p>
+<p>where $c = \sqrt{\frac{r}{2}}(\frac{r}{2} - 1)$. To finalize, we now allow $c$ and $w_t$ to be <strong>complex numbers</strong>:</p>
+<ul>
+<li>$c \in \mathbb{C}$</li>
+<li>$w_t \in \mathbb{C}$</li>
+</ul>
+<h2 id="the-mandelbrot-set">The Mandelbrot Set</h2>
+<p>The equation we derived generates the famous Mandelbrot set - one of mathematics&rsquo; most fascinating objects. We create this fractal by iterating our equation for different values of $c$ in the complex plane, just as we did with the logistic map.</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/mandelbrot_basic.png"
+    alt="Mandelbrot Set (Wikimedia, Created by Wolfgang Beyer, CC BY-SA 3.0)"
+    decoding="async"
+  />
+</p>
+
+<p>This is one of the most famous mathematical concepts and it&rsquo;s widely studied in the field of dynamical systems. To finally close the loop, we can also visualize the bifurcation diagram within the Mandelbrot set - a fascinating demonstration of how the chaotic behavior of the logistic map translates into complex space:</p>
+
+
+
+<p align="center">
+  <img
+    src="/img/mandelbrot_bifurcation_2.gif"
+    alt="Logistic Bifurcations in Mandelbrot"
+    decoding="async"
+  />
+</p>
+
+<p>Gif by By Jonny Hyman - Own work, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/w/index.php?curid=86422564">https://commons.wikimedia.org/w/index.php?curid=86422564</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>What we&rsquo;ve explored here isn&rsquo;t just a progression of mathematical complexity, but rather how a series of well-defined mathematical transformations – discretization, solving differential equations, and extending to complex numbers – can take us from familiar territory to unexpectedly rich mathematical landscapes.</p>
+<p>Starting from logistic regression, a daily tool in a data scientist&rsquo;s arsenal, we made a series of mathematically straightforward steps: we found that its sigmoid function solves a differential equation, discretized that equation to discover the logistic map and its chaos, and through some careful variable substitutions in the complex plane, arrived at the Mandelbrot set. Each transformation revealed new behaviors that weren&rsquo;t obvious from our starting point, highlighting how simple mathematical steps can take us from the predictable realm of classification to systems where predictability itself becomes an intricate question =).</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/internet-mindful-tools/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Tools for a more mindful Internet and Social Media experience</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-188016442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+    
+
+
+
+    </body>
+</html>
